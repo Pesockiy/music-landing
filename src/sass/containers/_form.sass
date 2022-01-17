@@ -1,11 +1,28 @@
 .form
+    $this: &
+    $color: var(--main-blue-color)
     max-width: 570px
     &__item
         +not-last
-            margin-bottom: 20px
+            margin-bottom: 30px
+        &.is-active
+            #{$this}__label
+                color: $color
+            #{$this}__input,
+            #{$this}__message
+                border-bottom-color: $color
+
+    &__message
+        height: 100px
+        border: 0
+        resize: none
     &__input,
     &__message
         display: block
         width: 100%
-    &__message
-        resize: none
+        padding-bottom: 8px
+        font: 400 16px/1.5 var(--base-font)
+        border-bottom: 1px solid #E0E0E0
+    &__label
+        font: 700 12px/1.5 var(--base-font-bold)
+        text-transform: capitalize

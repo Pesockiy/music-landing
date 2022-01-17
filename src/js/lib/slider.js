@@ -9,20 +9,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
             autoplay: {
                 delay: 2000
             },
+            spaceBetween: 20,
             centeredSlides: true,
             loop: true,
             breakpoints: {
                 540: {
-                    slidesPerView: 1,
-                    spaceBetween: 20
+                    slidesPerView: 1
                 },
                 760: {
-                    slidesPerView: 3,
-                    spaceBetween: 20
+                    slidesPerView: 3
                 },
                 960: {
-                    slidesPerView: 4,
-                    spaceBetween: 20
+                    slidesPerView: 4
                 },
                 1280: {
                     slidesPerView: 5,

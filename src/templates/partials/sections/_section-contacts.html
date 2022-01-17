@@ -24,8 +24,8 @@ linkClass = 'address__link' %}
 %}
 <div class="contacts-block">
   <!-- BEGIN section contacts -->
-  <section class="section contacts contacts-1">
-    <div class="contacts__inner">
+  <section class="section contacts contact">
+    <div class="contact__inner">
       <div class="contacts__header">
         <h2 class="contacts__title title title--large">Contact us</h2>
         <p class="contacts__text">Have an inquiry? We’ll be happy to assist you</p>
@@ -43,21 +43,11 @@ linkClass = 'address__link' %}
   </section>
   <!-- END section contacts -->
   <!-- BEGIN section contacts -->
-  <section class="section contacts contacts-2">
+  <section class="section contacts contacts--form">
     <div class="contacts__inner">
-      <div class="contacts__header">
-        <h2 class="contacts__title title title--large">Contact us</h2>
-        <p class="contacts__text">Have an inquiry? We’ll be happy to assist you</p>
-      </div>
-      <div class="contacts__body">
-        <address class="contacts__address address">
-          {% for link in links %}
-            <a href="{{link.linkUrl}}" class="{{linkClass}}" {{link.prop}}>
-              {{mixins.icon(link.linkIcon, linkIconClass)}}
-              {{link.linkText}}</a>
-          {% endfor %}
-        </address>
-      </div>
+    <h3 class="contacts__title   title">Fill in your details</h3>
+      {% include "../_form.html" %}
+
     </div>
   </section>
   <!-- END section contacts -->

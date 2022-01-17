@@ -1,10 +1,27 @@
 {% extends "../../layouts/_section.html" %}
-{% include "../_table.html" %}
 
 {% set section = {
     class: 'section-schedule',
     innerClass: 'section-schedule__inner'
 }%}
+
+{% set tabs = [
+    {
+        active: 'is-active',
+        day: 'Day 01',
+        date: '16 August'
+    },
+    {
+        active: '',
+        day: 'Day 02',
+        date: '17 August'
+    },
+    {
+        active: '',
+        day: 'Day 03',
+        date: '18 August'
+    }
+]%}
 
 {% set
 eventTableRows = [
@@ -30,16 +47,19 @@ eventTableRows = [
                     cellClass: 'schedule__content'
                 }, {
                     cells: {
-                         user: {
+                         user: [
+                        {
                             class: 'speaker',
                             avatarClass: 'speaker__photo',
-                            avatarUrl: 'img/users/Avatar-2.jpg',
+                            avatarUrl: 'img/users/Avatar-1.jpg',
                             avatarAlt: 'user photo',
                             nameClass: 'title title--xsmall',
-                            nameText: 'Johnny Doe',
-                            about: 'ipsum.com',
-                            aboutLink: 'ipsum.com'
+                            nameText: 'Yui Ronald',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: ' 2F12'
                         }
+                         ]
                     },
                     cellClass: 'schedule__speakers'
                 },
@@ -47,9 +67,9 @@ eventTableRows = [
                     cells: {
                         status: {
                             text: 'Upcoming',
-                            statusClass: 'status__text',
+                            statusClass: 'schedule__status-text',
                             icon: 'clock',
-                            iconClass: 'status__icon'
+                            iconClass: 'schedule__status-icon'
                         }
                     },
                     cellClass: 'schedule__status'
@@ -66,16 +86,41 @@ eventTableRows = [
 
                 },{
                     cells: {
-                         user: {
+                         user: [
+                        {
                             class: 'speaker',
                             avatarClass: 'speaker__photo',
                             avatarUrl: 'img/users/Avatar-2.jpg',
                             avatarAlt: 'user photo',
                             nameClass: 'title title--xsmall',
                             nameText: 'Johnny Doe',
-                            about: 'ipsum.com',
-                            aboutLink: 'ipsum.com'
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: '3G12'
+                        },
+                        {
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-1.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Yui Ronald',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: '2F12'
+                        },{
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-3.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Emma Satoshi',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: '2A35'
                         }
+                         ]
+                         
                     },
                     cellClass: 'schedule__speakers'
                 },
@@ -83,12 +128,12 @@ eventTableRows = [
                     cells: {
                         status: {
                             text: 'Live',
-                            statusClass: 'status__text',
+                            statusClass: 'schedule__status-text',
                             icon: 'live-camera',
-                            iconClass: 'status__icon'
+                            iconClass: 'schedule__status-icon'
                         }
                     },
-                    cellClass: 'schedule__status'
+                    cellClass: 'schedule__status is-active'
                 }
             ],
             [
@@ -100,16 +145,29 @@ eventTableRows = [
                     cellClass: 'schedule__content'
                 },{
                     cells: {
-                         user: {
+                         user: [
+                        {
                             class: 'speaker',
                             avatarClass: 'speaker__photo',
-                            avatarUrl: 'img/users/Avatar-2.jpg',
+                            avatarUrl: 'img/users/Avatar-4.jpg',
                             avatarAlt: 'user photo',
                             nameClass: 'title title--xsmall',
-                            nameText: 'Johnny Doe',
-                            about: 'ipsum.com',
-                            aboutLink: 'ipsum.com'
+                            nameText: 'Sasha Jackson',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: '2F18'
+                        },{
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-5.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Diana Brock',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: '2F24'
                         }
+                         ]
                     },
                     cellClass: 'schedule__speakers'
                 },
@@ -117,9 +175,306 @@ eventTableRows = [
                     cells: {
                         status: {
                             text: 'Preview',
-                            statusClass: 'status__text',
+                            statusClass: 'schedule__status-text',
                             icon: 'play',
-                            iconClass: 'status__icon'
+                            iconClass: 'schedule__status-icon'
+                        }
+                    },
+                    cellClass: 'schedule__status'
+                }
+            ]
+        ]
+    }, {
+        titles: [
+            {
+                titleText: 'Time'
+            }, {
+                titleText: 'Content'
+            }, {
+                titleText: 'Speakers'
+            }, {
+                titleText: ''
+            }
+        ],
+        rows: [
+            [
+                {
+                    cells: '11:00 AM to 12:00 PM',
+                    cellClass: 'schedule__date'
+                }, {
+                    cells: 'Vestibulum vel eros vel metus lacinia feugiat a nec metus. ',
+                    cellClass: 'schedule__content'
+                }, {
+                    cells: {
+                         user: [
+                        {
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-1.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Yui Ronald',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: ' 2F12'
+                        }
+                         ]
+                    },
+                    cellClass: 'schedule__speakers'
+                },
+                {
+                    cells: {
+                        status: {
+                            text: 'Upcoming',
+                            statusClass: 'schedule__status-text',
+                            icon: 'clock',
+                            iconClass: 'schedule__status-icon'
+                        }
+                    },
+                    cellClass: 'schedule__status'
+                }
+            ],
+
+            [
+                {
+                    cells: '12:00 PM to 03:00 PM',
+                    cellClass: 'schedule__date'
+                }, {
+                    cells: 'Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae, fringilla id magna. Vestibulum ornare eget urna nec pulvinar. Praesent porttitor convallis blandit. Fusce vel egestas dolor. Donec eu augue enim. Donec rutrum non lacus ac rhoncus. Morbi quis luctus leo, nec cursus ex.',
+                    cellClass: 'schedule__content'
+
+                },{
+                    cells: {
+                         user: [
+                        {
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-1.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Yui Ronald',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: '2F12'
+                        }
+                         ]
+                         
+                    },
+                    cellClass: 'schedule__speakers'
+                },
+                {
+                    cells: {
+                        status: {
+                            text: 'Live',
+                            statusClass: 'schedule__status-text',
+                            icon: 'live-camera',
+                            iconClass: 'schedule__status-icon'
+                        }
+                    },
+                    cellClass: 'schedule__status is-active'
+                }
+            ],
+            [
+                {
+                    cells: '03:00 PM to 04:00 PM',
+                    cellClass: 'schedule__date'
+                }, {
+                    cells: 'Vestibulum vel eros vel metus lacinia feugiat a nec metus. ',
+                    cellClass: 'schedule__content'
+                },{
+                    cells: {
+                         user: [
+                        {
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-4.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Sasha Jackson',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: '2F18'
+                        }
+                         ]
+                    },
+                    cellClass: 'schedule__speakers'
+                },
+                {
+                    cells: {
+                        status: {
+                            text: 'Preview',
+                            statusClass: 'schedule__status-text',
+                            icon: 'play',
+                            iconClass: 'schedule__status-icon'
+                        }
+                    },
+                    cellClass: 'schedule__status'
+                }
+            ]
+        ]
+    }, {
+        titles: [
+            {
+                titleText: 'Time'
+            }, {
+                titleText: 'Content'
+            }, {
+                titleText: 'Speakers'
+            }, {
+                titleText: ''
+            }
+        ],
+        rows: [
+            [
+                {
+                    cells: '11:00 AM to 12:00 PM',
+                    cellClass: 'schedule__date'
+                }, {
+                    cells: 'Vestibulum vel eros vel metus lacinia feugiat a nec metus. ',
+                    cellClass: 'schedule__content'
+                }, {
+                    cells: {
+                         user: [
+                        {
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-1.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Yui Ronald',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: ' 2F12'
+                        }
+                         ]
+                    },
+                    cellClass: 'schedule__speakers'
+                },
+                {
+                    cells: {
+                        status: {
+                            text: 'Upcoming',
+                            statusClass: 'schedule__status-text',
+                            icon: 'clock',
+                            iconClass: 'schedule__status-icon'
+                        }
+                    },
+                    cellClass: 'schedule__status'
+                }
+            ],
+
+            [
+                {
+                    cells: '12:00 PM to 03:00 PM',
+                    cellClass: 'schedule__date'
+                }, {
+                    cells: 'Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae, fringilla id magna. Vestibulum ornare eget urna nec pulvinar. Praesent porttitor convallis blandit. Fusce vel egestas dolor. Donec eu augue enim. Donec rutrum non lacus ac rhoncus. Morbi quis luctus leo, nec cursus ex.',
+                    cellClass: 'schedule__content'
+
+                },{
+                    cells: {
+                         user: [
+                        {
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-2.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Johnny Doe',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: '3G12'
+                        },
+                        {
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-1.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Yui Ronald',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: '2F12'
+                        },{
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-3.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Emma Satoshi',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: '2A35'
+                        }
+                         ]
+                         
+                    },
+                    cellClass: 'schedule__speakers'
+                },
+                {
+                    cells: {
+                        status: {
+                            text: 'Live',
+                            statusClass: 'schedule__status-text',
+                            icon: 'live-camera',
+                            iconClass: 'schedule__status-icon'
+                        }
+                    },
+                    cellClass: 'schedule__status is-active'
+                }
+            ],
+            [
+                {
+                    cells: '03:00 PM to 04:00 PM',
+                    cellClass: 'schedule__date'
+                }, {
+                    cells: 'Vestibulum vel eros vel metus lacinia feugiat a nec metus. ',
+                    cellClass: 'schedule__content'
+                },{
+                    cells: {
+                         user: [
+                        {
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-4.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Sasha Jackson',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: '2F18'
+                        },{
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-5.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Diana Brock',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: '2F24'
+                        },{
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-5.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Diana Brock',
+                            subdescriptionClass: 'user__sub-description',
+                            description: 'Booth:',
+                            subdescription: '2F24'
+                        }
+                         ]
+                    },
+                    cellClass: 'schedule__speakers'
+                },
+                {
+                    cells: {
+                        status: {
+                            text: 'Preview',
+                            statusClass: 'schedule__status-text',
+                            icon: 'play',
+                            iconClass: 'schedule__status-icon'
                         }
                     },
                     cellClass: 'schedule__status'
@@ -135,49 +490,20 @@ eventTableRows = [
     <div class="schedule">
         <div class="schedule__head">
             {% for tab in tabs %}
-                <div class="schedule__tab event-date">
-                    <div class="event-date__day">Day 01</div>
-                    <div class="event-date__date">16 August</div>
+                <div class="schedule__tab {{tab.active}} event-date">
+                    <div class="event-date__day">{{tab.day}}</div>
+                    <div class="event-date__date">{{tab.date}}</div>
                 </div>
             {% endfor %}
         </div>
         {% for table in tables %}
-            <div class="schedule__body">
+            <div class="schedule__body {% if (loop.index == 0) %} is-active {% endif %}">
+            </div>
+        {% endfor %}
+        {% for table in eventTableRows %}
+            <div class="schedule__body {% if loop.index == 1 %} is-active {% endif %}">
                 {% include "partials/_table.html" %}
             </div>
         {% endfor %}
-        <div class="schedule__body">
-            <table class="table">
-                <thead class="table__head">
-                    <tr class="table__row">
-                        {% for th in (eventTableRows | first).titles %}
-                            <th class="table__title title title--medium">{{th.titleText}}</th>
-                        {% endfor %}
-                    </tr>
-                </thead>
-                <tbody class="table__body">
-                    {% for rows in (eventTableRows | first).rows %}
-                        <tr class="table__row">
-                            {% for row in rows %}
-                                {% if row.cells.user %}
-                                    <td class="table__cell {{row.cellClass}}">
-                                        {# {% for user in users %} #}
-                                        {{mixins.user(row.cells.user)}}
-                                        {# {% endfor %} #}
-                                    </td>
-                                {% elif row.cells.status %}
-                                    <td class="table__cell {{row.cellClass}}">
-                                        <span class="{{row.cells.status.statusClass}}">{{row.cells.status.text}}</span>
-                                        {{mixins.icon(row.cells.status.icon,row.cells.status.iconClass)}}
-                                    </td>
-                                {% elif row.cells.user != '' %}
-                                    <td class="table__cell {{row.cellClass}}">{{row.cells}}</td>
-                                {% endif %}
-                            {% endfor %}
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
     </div>
 {% endblock %}

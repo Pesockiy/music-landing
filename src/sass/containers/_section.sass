@@ -1,14 +1,15 @@
 .section
     $this: &
+    position: relative
     padding-top: clamp(50px, 15vw, 120px)
     padding-bottom: clamp(50px, 15vw, 120px)
     &--reversed
         #{$this}__inner 
             flex-direction: row-reverse
     &__title
-        margin-bottom: clamp(15px, 3vw, 40px)
+        margin-bottom: clamp(25px, 3vw, 40px)
 
-.top-section
+.event
     position: relative
     z-index: 1
     display: flex
@@ -66,8 +67,8 @@
         height: 56px
         fill: var(--main-light-color)
     
-.top-section + .category
-    padding-top: clamp(100px, 15vw, 240px)
+.event + .category
+    padding-top: clamp(100px, 10vw, 240px)
 
 
 .sponsors
@@ -116,59 +117,78 @@
 
 .section-schedule
     background: linear-gradient(rgba(56, 29, 219, 0.05),rgba(56, 29, 219, 0)mrgba(56, 29, 219, 0))
+    &__title
+        margin-bottom: clamp(25px, 3vw, 60px)
+
 
 .testimonials	
 	&__title
 		text-align: center
 
 .blogs
-    +line-gradient(rgba(#FFA3A3, .2), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2))
+    $color: #FFA3A3
+    +line-gradient(rgba($color, .2), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2))
+    &__icon
+        position: absolute
+        top: 0
+        left: 50%
+        width: 431px
+        height: 431px
+        opacity: 0.2
+        transform: translateX(-400px)
+        fill: $color
+        +r(960)
+            display: none
 
-.testimonials  + .blogs
-    padding-top: clamp(170px, 15vw, 383px)
+.testimonials
+    padding-bottom: clamp(170px, 15vw, 383px)
 
 .contacts
-    min-width: 500px
+    min-width: 420px
     flex-grow: 1
-
-    padding: 110px 10% 110px 80px
-    color: var(--main-light-color)
-    background: var(--main-blue-color) url('../img/shape-bottom.svg') no-repeat right bottom / 20% auto
-    +r(960)
-        min-width: 0
+    display: flex
+    padding: clamp(40px, 10vw, 110px) 200px clamp(40px, 10vw, 110px) clamp(30px, 10vw, 80px)
+    +r(1260)
+        padding-right: 40px
+    +r(560)
+        min-width: 100%
+    &__inner
+        width: 100%
     &__header 
         margin-bottom: 50px
     &__title 
         margin-bottom: 10px
         color: inherit
 
-.contacts-1
-    display: flex
-    width: 40%
+.contact
+    flex: 2
     justify-content: flex-end
-    padding: 110px 80px
-    .contacts__inner 
+    color: var(--main-light-color)
+    background: var(--main-blue-color) url('../img/shape-bottom.svg') no-repeat right bottom / 224px auto
+    +r(1260)
+        max-width: 100%
+    +r(960)
+        background-image: none
+    &__inner 
         margin-left: auto
         margin-right: 40%
         margin-right: 200px
         margin-right: clamp(20%, 25vw, 100px);
-        // margin-right: clamp(40%, 10vw, min(200px, 50px))
         max-width: 420px;
+        +r(1260)
+            margin-left: 0
+            margin-right: auto
 
-.contacts-2
-    width: 56%
-    min-height: 662px
-    background: grey
+
+.contacts--form
+    flex: 2.8
+    background: url('../img/Shape.svg') no-repeat 800px 102% / 72px 48px
+
 
 .address
-    font-style: normal
-    &__link
-        +reset-link
-        display: flex
-        align-items: center
-        +not-last
-            margin-bottom: 15px
-    &__icon
-        display: inline-block
-        margin-right: 10px
-        fill: var(--main-pink-color)
+	font: 700 16px/1.2 var(--second-font-bold)
+
+.address__link
+    +not-last
+        margin-bottom: 40px
+    

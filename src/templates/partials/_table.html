@@ -1,21 +1,33 @@
-<table class="event-table {{ eventTable.class }}">
-
-    <thead class="event-table__head">
-        <tr class="event-table__row">
-            {% for title in eventTable.titles %}
-                <th class="event-table__title">{{title.titleText}}</th>
+<table class="table">
+    <thead class="table__head">
+        <tr class="table__row">
+            {% for th in table.titles %}
+                <th class="table__title title title--medium">{{th.titleText}}</th>
             {% endfor %}
         </tr>
     </thead>
-
-    <tbody class="event-table__body">
-        {% for row in eventTable.rows %}
-            <tr class="event-table__row">
-                {% for cell in row.cells %}
-                    <td class="event-table__cell">{{col.text}}</td>
+    <tbody class="table__body">
+        {# {% for rows in (eventTableRows | first).rows %} #}
+        {% for rows in table.rows %}
+            <tr class="table__row">
+                {# {% for row in rows %} #}
+                {% for row in rows %}
+                    {% if row.cells.user %}
+                        <td class="table__cell {{row.cellClass}}">
+                            {% for us in row.cells.user %}
+                                {{mixins.user(us)}}
+                            {% endfor %}
+                        </td>
+                    {% elif row.cells.status %}
+                        <td class="table__cell {{row.cellClass}}">
+                            <span class="{{row.cells.status.statusClass}}">{{row.cells.status.text}}</span>
+                            {{mixins.icon(row.cells.status.icon,row.cells.status.iconClass)}}
+                        </td>
+                    {% elif row.cells.user != '' %}
+                        <td class="table__cell {{row.cellClass}}">{{row.cells}}</td>
+                    {% endif %}
                 {% endfor %}
             </tr>
         {% endfor %}
     </tbody>
-
 </table>
