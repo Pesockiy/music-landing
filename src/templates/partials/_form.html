@@ -1,0 +1,33 @@
+{% set form = {
+    class: 'form'
+} %}
+
+{% set inputs = [
+    {
+        class: 'form__input',
+        type: 'text',
+        id: 'name',
+        name: 'name',
+        placeholder: 'name'
+    }, {
+        class: 'form__input',
+        type: 'email',
+        id: 'email',
+        name: 'email',
+        placeholder: 'email'
+    }
+] %}
+
+<form action="" class="{{form.class}}">
+    {% for input in inputs %}
+        <div class="form__item">
+            {{mixins.input(input)}}
+        </div>
+    {% endfor %}
+    <div class="form__item">
+        <textarea class="form__message" name="message" id="message" placeholder="message"></textarea>
+    </div>
+    <div class="form__item">
+        {{mixins.button('button_blue button_full', 'Submit')}}
+    </div>
+</form>

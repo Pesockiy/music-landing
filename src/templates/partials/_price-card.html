@@ -1,0 +1,12 @@
+<!-- BEGIN card -->
+<div class="price-card {{card.class}}">
+    <h3 class="price-card__title {{card.ttlClass}}">{{card.ttl}}</h3>
+    <strong class="price-card__price {{card.priceClass}}">{{card.price}}</strong>
+    <ul class="price-card__list {{card.priceListClass}}">
+        {% for listItem in card.listItems %}
+            <li class="price-card__item {{listItem.priceListItemsClass}}">{{listItem.priceListItemsText}}</li>
+        {% endfor %}
+    </ul>
+    {{mixins.button(card.priceListBtnClass, card.priceListBtnText)}}
+</div>
+<!-- END card -->

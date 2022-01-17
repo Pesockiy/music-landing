@@ -1,0 +1,36 @@
+$card-colors: (orange: #FC5252  ,pink: #FFA3A3  ,blue: #381DDB  ,light-blue:#84C4FF  )
+    
+.category-card
+    $this: &
+    $speed: .3s
+    display: flex
+    justify-content: flex-start
+    flex-direction: column
+    height: auto
+    padding: 80px 30px 30px 40px
+    border-radius: 20px
+    box-shadow: 0 3px 3px rgba(0,0,0,.3)
+    @each $color-name, $card-color in $card-colors
+        &--#{$color-name}.is-active
+            background: $card-color
+        &--#{$color-name}
+            background: rgba($card-color,.4)
+            #{$this}__icon
+                fill: $card-color
+    &.is-active
+        #{$this}__icon
+            fill: var(--main-light-color)
+        #{$this}__title,
+        #{$this}__text
+            color: var(--main-light-color)
+    &__icon
+        +tr(fill #{$speed})
+        font-size: 2em
+    &__title,
+    &__text
+        +tr(color #{$speed})
+
+    &__icon,
+    &__title
+        margin-bottom: 20px
+

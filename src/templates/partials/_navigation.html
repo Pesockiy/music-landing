@@ -1,0 +1,27 @@
+<!-- BEGIN nav -->
+<nav class="{{nav.class}} nav">
+    <ul class="nav__list {{nav.navListClass}} ">
+        {% for link in navLinks %}
+            {% if link.subMenu %}
+                <li class="nav__item sub-menu {{nav.navItemClass}}">
+                    {{mixins.icon('arrow-down-3', 'sub-menu__icon')}}
+                    <a class="nav__link {{link.class}}" href="{{link.url}}">{{link.nameLink}}</a>
+                    <!-- BEGIN sub-menu__list -->
+                    <ul class="sub-menu__list">
+                        {% for subMenuLink in link.subMenu %}
+                            <li class="sub-menu__item">
+                                <a class="sub-menu__link" href="{{subMenuLink.url}}">{{subMenuLink.nameLink}}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <!-- END sub-menu__list -->
+                </li>
+            {% else %}
+                <li class="nav__item {{nav.navItemClass}}">
+                    <a class="nav__link {{link.class}}" href="{{link.url}}">{{link.nameLink}}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
+<!-- END nav -->

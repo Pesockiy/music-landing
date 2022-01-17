@@ -1,0 +1,51 @@
+$button-colors: (red: #FC5252  ,pink: #FFA3A3  ,blue: #381DDB  ,light-blue:#84C4FF)
+
+.button
+    $this: &
+    +tr(background-color .3s)
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    min-width: 160px
+    padding: 1.125em 2.1em
+
+    font: 700 16px/1.25 var(--base-font-bold)
+    border-radius: 0.5em
+    text-decoration: none
+    color: var(--main-blue-color)
+    background-color: var(--main-light-color)
+    +r(600)
+        width: 100%
+    @each $button-name, $button-color in $button-colors
+        &_#{$button-name}
+            background-color: $button-color
+            color: var(--main-light-color)
+            &:hover
+                background-color: rgba($button-color,.8)
+
+    &_default
+        color: var(--main-blue-color)
+        border: 1px solid
+        background-color: transparent
+        #{$this}__icon_add 
+            fill: var(--main-blue-color)
+        &:hover
+            background-color: transparent
+    &_full
+        width: 100%
+    &_big
+        font-size: 20px
+    &_small
+        font-size: 12px
+    &__icon
+        &_add
+            width: 1.5em
+            height: 1.5em
+            margin-right: 12px
+            fill: var(--main-light-color)
+        &_arrow
+            width: 1em
+            height: 1em
+            margin-left: 12px
+            fill: var(--main-dark-color)
+   

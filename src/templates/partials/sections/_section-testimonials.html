@@ -1,0 +1,61 @@
+{% set section = {
+  class: 'testimonials',
+  innerClass: 'testimonials__inner'
+} %}
+
+{% set 
+slider = {
+class: 'comments-slider'
+}
+%}
+
+{% set comments = [
+      {
+        class: 'swiper-slide comments-slider__slide',
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        textClass: '',
+        user: {
+            class: 'comment__user',
+            avatarClass: 'comment__photo',
+            avatarUrl: 'img/users/Avatar-1.jpg',
+            avatarAlt: 'user photo',
+            nameClass: 'title title--small',
+            nameText: 'Johnny Doe',
+            about: 'ipsum.com',
+            aboutLink: 'ipsum.com'
+        }
+      },
+      {
+        class: 'swiper-slide comments-slider__slide',
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        textClass: '',
+        user: {
+            class: 'comment__user',
+            avatarClass: 'comment__photo',
+            avatarUrl: 'img/users/Avatar-1.jpg',
+            avatarAlt: 'user photo',
+            nameClass: 'title title--small',
+            nameText: 'Johnny Doe',
+            about: 'ipsum.com',
+            aboutLink: 'ipsum.com'
+        }
+      }
+  ]
+%}
+<section class="section testimonials wrapper">
+  <div class="container">
+    <h2 class="section__title testimonials__title title title--large">Testimonials</h2>
+  </div>
+
+  <!-- BEGIN slider -->
+  <div class="swiper {{slider.class}}">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      {% for comment in comments %}
+        {% include "../../partials/_comment.html" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- END slider -->

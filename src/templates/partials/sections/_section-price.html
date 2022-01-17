@@ -1,0 +1,84 @@
+{% extends "../../layouts/_section.html" %}
+
+{% set section = {
+    class: 'price',
+    innerClass: 'price__inner'
+} %}
+
+{% set cards = [
+    {
+        class: '',
+        ttlClass: 'title title--medium ',
+        ttl: 'Basic',
+        priceClass: '',
+        price: '$100',
+        priceListClass: '',
+        priceListBtnClass: 'button_default',
+        priceListBtnText: 'Get Tickets',
+        listItems: [{
+            priceListItemsClass: '',
+            priceListItemsText: '1 Seat Available'
+        },
+        {
+            priceListItemsClass: 'is-disabled',
+            priceListItemsText: 'Access to Wifi Router'
+        },
+        {
+            priceListItemsClass: 'is-disabled',
+            priceListItemsText: 'Free Food & Coffee'
+        }]
+    },
+    {
+        class: 'price-card_blue',
+        ttlClass: 'title title--medium ',
+        ttl: 'Standard',
+        priceClass: '',
+        price: '$150',
+        priceListClass: '',
+        priceListBtnClass: 'button_blue',
+        priceListBtnText: 'Get Tickets',
+        listItems: [{
+            priceListItemsClass: '',
+            priceListItemsText: '1 Seat Available'
+        },
+        {
+            priceListItemsClass: '',
+            priceListItemsText: 'Access to Wifi Router'
+        },
+        {
+            priceListItemsClass: 'is-disabled',
+            priceListItemsText: 'Free Food & Coffee'
+        }]
+    },
+    {
+        class: 'price-card_red',
+        ttlClass: 'title title--medium ',
+        ttl: 'Premium',
+        priceClass: '',
+        price: '$200',
+        priceListClass: '',
+        priceListBtnClass: 'button_default',
+        priceListBtnText: 'Get Tickets',
+        listItems: [{
+            priceListItemsClass: '',
+            priceListItemsText: '1 Seat Available'
+        },
+        {
+            priceListItemsClass: '',
+            priceListItemsText: 'Access to Wifi Router'
+        },
+        {
+            priceListItemsClass: '',
+            priceListItemsText: 'Free Food & Coffee'
+        }]
+    }
+    ]%}
+
+{% block section %}
+    <h3 class="section__title title title--large {{section.class}}__ttl">Choose a Tier that’s right for you</h3>
+    <div class="price__content">
+        {% for card in cards %}
+            {% include "../../partials/_price-card.html" %}
+        {% endfor %}
+    </div>
+{% endblock %}

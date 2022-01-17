@@ -1,0 +1,9 @@
+<!-- BEGIN socials -->
+<div class="socials {{socialsClasses.class}}">
+  {% for social in socials %}
+    <a href="{{social.url}}" class="socials__link" aria-label="{{social.nameLink}}">
+      {{mixins.icon(social.nameLink,'socials__icon')}}
+    </a>
+  {% endfor %}
+</div>
+<!--  END socials  -->

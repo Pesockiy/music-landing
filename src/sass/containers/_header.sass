@@ -1,0 +1,120 @@
+.header
+    $this: &
+    --paddingSize: 32px
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 999
+    width: 100%
+    margin-right: 25px
+    padding: var(--paddingSize) 0
+    +tr(padding .3s)
+    +r(1000)
+        --paddingSize: 15px
+        background-color: var(--main-dark-color)
+    &.is-scrolled
+        --paddingSize: 10px
+        background-color: var(--main-light-color)
+        background-color: var(--main-dark-color)
+
+    &__inner
+        position: relative
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        align-items: center
+    &__item
+        +not-last
+            margin-right: 35px
+    &__mobile
+        display: flex
+        align-items: inherit
+        margin-left: auto
+        +r(1000)
+            overflow-y: scroll
+            position: fixed
+            z-index: 999
+            top: 0
+            bottom: 0
+            left: 0
+            display: none
+            padding: 40px
+            width: 40%
+            min-width: 270px
+            background-color: var(--main-dark-color)
+            // &::after
+            //     content: ''
+            //     z-index: -1
+            //     position: absolute
+            //     top: 0
+            //     left: 100%
+            //     width: 100vw
+            //     height: 100%
+            //     background-color: rgba(0,0,0,0.4)
+            &.is-active
+                display: block
+            #{$this}__nav
+                margin-bottom: 25px
+            #{$this}__nav-link
+                font-size: 20px
+
+    &__logo,
+    &__nav
+        margin-right: 20px
+
+    &__nav
+        margin-left: auto
+
+    &__link
+        +tr(text-decoration-color .3s)
+        text-decoration: underline
+        text-decoration-color: transparent
+        &:hover
+            text-decoration-color: #fff
+        +r(1000)
+            text-decoration: none
+
+    &__button
+
+.hamburger-menu
+    $this: &
+    z-index: 9999
+    position: absolute
+    top: 50%
+    right: 20px
+    width: 35px
+    display: none
+    height: 30px
+    transform: translateY(-50%)
+    cursor: pointer
+    user-select: none
+    +r(1000)
+        display: block
+    &__line
+        position: absolute
+        width: 100%
+        height: 4px
+        background-color:#fff
+        border-radius: 2px
+        transition: .3s cubic-bezier(.8, .5, .2, 1.4)
+        transition-duration: 500ms
+        &:nth-child(1)
+            top: 0px
+            left: 0px
+        &:nth-child(2)
+            top: 13px
+            left: 0px
+            opacity: 1
+        &:nth-child(3)
+            bottom: 0px
+            left: 0px
+    &.is-active #{$this}__line
+        &:nth-child(1)
+            transform: rotate(45deg)
+            top: 13px
+        &:nth-child(2)
+            opacity: 0
+        &:nth-child(3)
+            top: 13px
+            transform: rotate(-45deg)

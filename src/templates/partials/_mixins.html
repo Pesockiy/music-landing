@@ -1,0 +1,67 @@
+{% macro icon(i, cl) %}
+<svg class="icon icon-{{i}} {{cl}}">
+  <use xlink:href="img/sprite.svg#icon-{{i}}"></use>
+</svg>
+{% endmacro %}
+
+{% macro user(user) %}
+<div class="user {{user.class}}">
+  <img class="user__avatar {{user.avatarClass}}" src="{{user.avatarUrl}}" alt="{{user.avatarAlt}}">
+  <div class="user__body">
+    <h3 class="user__name {{user.nameClass}}">{{user.nameText}}</h3>
+    <a href="{{user.aboutLink}}" class="user__about">
+      {{user.about}}
+    </a>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro button(cl, children, iconClass) %}
+<button class="button {{cl}}">
+  {% if iconClass == 'button__icon_add' %}
+  <svg class="icon button__icon button__icon_add">
+    <use xlink:href="img/sprite.svg#icon-add"></use>
+  </svg>
+  {% endif %}
+  {{children}}
+  {% if iconClass == 'button__icon_arrow' %}
+  <svg class="icon button__icon button__icon_arrow">
+    <use xlink:href="img/sprite.svg#icon-arrow"></use>
+  </svg>
+  {% endif %}
+</button>
+{% endmacro %}
+
+{% macro cardBlog(cardBlog) %}
+<div class="card-blog {{cardBlog.class}}">
+  <div class="card-blog__top">
+    <picture class="picture-box card-blog__img">
+      <source class="picture-box__item" srcset="{{cardBlog.imgUrl}}.webp" type="image/webp">
+      <img class="picture-box__item" src="{{cardBlog.imgUrl}}.jpg" alt="{{cardBlog.imgAltrl}}">
+    </picture>
+
+  </div>
+  <div class="card-blog__body">
+    <div class="card-blog__info info">
+      {% for info in cardBlog.infos %}
+      <div class="info__item">
+        <svg class="icon icon-{{info.infoIcon}} info__icon">
+          <use xlink:href="img/sprite.svg#icon-{{info.infoIcon}}"></use>
+        </svg>
+        <span class="info__text">{{info.infoText}}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <h4 class="title title--small title--thin card-blog__title">{{cardBlog.ttl}}</h4>
+  <div class="card-blog__tags">
+    {% for tag in cardBlog.tags %}
+    <a class="card-blog__tag tag" href="{{tag.tagUrl}}">{{tag.tagText}}</a>
+    {% endfor %}
+  </div>
+</div>
+{% endmacro %}
+
+{% macro input(input) %}
+    <input class="input{{input.class}} input" type="{{input.type}}" id="{{input.id}}" name="{{input.name}}" placeholder="{{input.placeholder}}">
+{% endmacro %}

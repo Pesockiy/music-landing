@@ -1,0 +1,64 @@
+{% set
+linkIconClass = 'address__icon' %}
+{% set
+linkClass = 'address__link' %}
+{% set
+ links = [
+    {
+        linkText: '+92 333 6527366',
+        linkUrl: 'tel:+923336527366',
+        linkIcon: 'phone'
+    },
+    {
+        linkText: 'abuzer@greelogix.com',
+        linkUrl: 'mailto:abuzer@greelogix.com',
+        linkIcon: 'email'
+    },
+    {
+        linkText: 'Plot 252, Block L Phase 2 Johar Town, Lahore, PK',
+        linkUrl: 'https://goo.gl/maps/2auCUqfUswtkw6MD7',
+        linkIcon: 'map-pin',
+        prop: 'target="_blank"'
+    }
+]
+%}
+<div class="contacts-block">
+  <!-- BEGIN section contacts -->
+  <section class="section contacts contacts-1">
+    <div class="contacts__inner">
+      <div class="contacts__header">
+        <h2 class="contacts__title title title--large">Contact us</h2>
+        <p class="contacts__text">Have an inquiry? We’ll be happy to assist you</p>
+      </div>
+      <div class="contacts__body">
+        <address class="contacts__address address">
+          {% for link in links %}
+            <a href="{{link.linkUrl}}" class="{{linkClass}}" {{link.prop}}>
+              {{mixins.icon(link.linkIcon, linkIconClass)}}
+              {{link.linkText}}</a>
+          {% endfor %}
+        </address>
+      </div>
+    </div>
+  </section>
+  <!-- END section contacts -->
+  <!-- BEGIN section contacts -->
+  <section class="section contacts contacts-2">
+    <div class="contacts__inner">
+      <div class="contacts__header">
+        <h2 class="contacts__title title title--large">Contact us</h2>
+        <p class="contacts__text">Have an inquiry? We’ll be happy to assist you</p>
+      </div>
+      <div class="contacts__body">
+        <address class="contacts__address address">
+          {% for link in links %}
+            <a href="{{link.linkUrl}}" class="{{linkClass}}" {{link.prop}}>
+              {{mixins.icon(link.linkIcon, linkIconClass)}}
+              {{link.linkText}}</a>
+          {% endfor %}
+        </address>
+      </div>
+    </div>
+  </section>
+  <!-- END section contacts -->
+</div>

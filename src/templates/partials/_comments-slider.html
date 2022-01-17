@@ -1,0 +1,15 @@
+{% set 
+slider = {
+class: 'comments-slider'
+}
+%}
+
+  
+
+{% extends "partials/_slider.html" %}
+
+{% block slide %}
+    {% for comment in comments %}
+        {% include "partials/_comment.html" %}
+    {% endfor %}
+{% endblock %}

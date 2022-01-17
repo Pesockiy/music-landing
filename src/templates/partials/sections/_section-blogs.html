@@ -1,0 +1,296 @@
+{% set section = {
+    class: 'blogs',
+    innerClass: 'blogs__inner'
+} %}
+
+{% set 
+slider = {
+class: 'blogs-slider'
+}
+%}
+
+{% set blogs = [
+    {
+        class: 'swiper-slide',
+        imgUrl: 'img/gallery/music-3',
+        imgAltrl: 'alt text',
+        infos: [{
+            infoIcon: 'heart',
+            infoText: '412'
+        },
+        {
+            infoIcon: 'chat',
+            infoText: '140'
+        }
+        ],
+        ttl: 'Lorem Ipsum Amet',
+        tags: [ {
+            tagUrl: '#',
+            tagText: '#music'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#concert'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#conference'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#london'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#event'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#artist'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#dj'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#soundtrack'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#dance'
+        }
+        ]
+    },
+    {
+        class: 'swiper-slide',
+        imgUrl: 'img/gallery/music-4',
+        imgAltrl: 'alt text',
+        infos: [{
+            infoIcon: 'heart',
+            infoText: '412'
+        },
+        {
+            infoIcon: 'chat',
+            infoText: '140'
+        }
+        ],
+        ttl: 'Lorem Ipsum Amet',
+        tags: [ {
+            tagUrl: '#',
+            tagText: '#music'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#concert'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#conference'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#london'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#event'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#artist'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#dj'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#soundtrack'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#dance'
+        }
+        ]
+    },
+    {
+        class: 'swiper-slide',
+        imgUrl: 'img/gallery/music-5',
+        imgAltrl: 'alt text',
+        infos: [{
+            infoIcon: 'heart',
+            infoText: '412'
+        },
+        {
+            infoIcon: 'chat',
+            infoText: '140'
+        }
+        ],
+        ttl: 'Lorem Ipsum Amet',
+        tags: [ {
+            tagUrl: '#',
+            tagText: '#music'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#concert'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#conference'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#london'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#event'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#artist'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#dj'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#soundtrack'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#dance'
+        }
+        ]
+    },
+    {
+        class: 'swiper-slide',
+        imgUrl: 'img/gallery/music-6',
+        imgAltrl: 'alt text',
+        infos: [{
+            infoIcon: 'heart',
+            infoText: '412'
+        },
+        {
+            infoIcon: 'chat',
+            infoText: '140'
+        }
+        ],
+        ttl: 'Lorem Ipsum Amet',
+        tags: [ {
+            tagUrl: '#',
+            tagText: '#music'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#concert'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#conference'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#london'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#event'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#artist'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#dj'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#soundtrack'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#dance'
+        }
+        ]
+    },
+    {
+        class: 'swiper-slide',
+        imgUrl: 'img/gallery/music-7',
+        imgAltrl: 'alt text',
+        infos: [{
+            infoIcon: 'heart',
+            infoText: '412'
+        },
+        {
+            infoIcon: 'chat',
+            infoText: '140'
+        }
+        ],
+        ttl: 'Lorem Ipsum Amet',
+        tags: [ {
+            tagUrl: '#',
+            tagText: '#music'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#concert'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#conference'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#london'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#event'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#artist'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#dj'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#soundtrack'
+        },
+        {
+            tagUrl: '#',
+            tagText: '#dance'
+        }
+        ]
+    }
+]%}
+
+<!-- BEGIN section category -->
+<section class="section blogs ">
+    <div class="wrapper">
+        <div class="blogs__inner container">
+            <h3 class="blogs__title title section__title title--large">See our Best Shots</h3>
+        </div>
+        <!-- BEGIN slider -->
+        <div class="swiper {{slider.class}}">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                {% for blog in blogs %}
+                    {{mixins.cardBlog(blog)}}
+                {% endfor %}
+            </div>
+            <div class="slider__prev">{{mixins.icon('arrow-down-3', 'slider__prev-icon')}}</div>
+            <div class="slider__next">{{mixins.icon('arrow-down-3', 'slider__next-icon')}}</div>
+        </div>
+        <!-- END slider -->
+    </div>
+</section>
+<!-- END section category-->

@@ -1,0 +1,280 @@
+html
+	scroll-behavior: smooth
+	
+body
+	height: 200vh
+	color: var(--main-dark-color)
+	background-color: var(--main-light-color)
+	font: normal 16px/1.5 var(--base-font)
+	// +css-lock(16, 50, 600, 1000)
+	&.is-no-scroled
+		overflow: hidden
+
+.wrapper
+	max-width: 1920px
+	padding-left: 15px
+	padding-right: 15px
+	+mx
+
+.container
+	width: 100%
+	max-width: 1170px
+	padding-left: 15px
+	padding-right: 15px
+	+mx
+
+.swiper
+	+r(540)
+		padding-left: 15px
+		padding-right: 15px
+	&-wrapper
+    	box-sizing: border-box
+
+.logo
+	display: inline-block
+	&__img
+		fill: var(--main-light-color)
+
+.text-pink
+	color: var(--main-pink-color)
+
+.big-text
+	+mx
+	width: fit-content
+    text-align: center
+	font-family: var(--base-font-bold)
+	+css-lock(40, 144, 400, 1400)
+	line-height: 1.21
+	color: transparent
+	-webkit-text-stroke: 1px var(--main-light-color);
+
+.grid-gallery
+	$this: &
+	padding: 120px
+	margin: -120px
+	+r(1000)
+		padding: 0
+		margin: 0
+	&__item
+		float: left
+		position: relative
+		z-index: 1
+		width: max-content
+		width: 100%
+		max-width: 100%
+		max-width: 50%
+		filter: drop-shadow(0 4px 2px rgba(0,0,0,0.2))
+		+r(400)
+			float: none
+			width: 100%	
+			max-width: 100%
+		#{$this}__box
+			height: 100%
+			width: 100%
+		
+		&:not(:nth-of-type(2n))
+			margin-top: 7%
+		&:nth-of-type(4n):not(:nth-of-type(8n))
+			margin-top: 4%	
+			aspect-ratio: 1/.73;
+		&:nth-of-type(8n)
+			margin-top: 4%
+			aspect-ratio: 1 / 0.73
+		&:nth-of-type(odd)
+			clear: left
+			margin-right: 5%
+			aspect-ratio: 1 / 0.73
+		
+		&:nth-of-type(4n + 3),
+		&:nth-of-type(4n + 2)
+			width: 39%
+			aspect-ratio: 0.9 / 1
+			
+	&__box
+		overflow: hidden
+		border-radius: 10%
+
+	&__blured-img
+		position: absolute
+		z-index: -1
+		top: 20px
+		left: 0
+		width: 100%
+		height: 100%
+		opacity: 0.5
+		filter: blur(30px)
+		+r(700)
+			opacity: 0.3
+			filter: blur(20px)
+
+.sponsors-block
+	display: grid
+	grid-template-columns: repeat( auto-fit, minmax(220px, 1fr))
+	grid-gap: 40px 20px
+	&__img
+		margin: auto
+	
+
+.picture-box
+	position: relative
+	display: block
+	&__item
+		width: 100%
+		height: 100%
+		object-fit: cover
+		object-position: center
+
+
+.layer-gallery
+	$this: &
+	display: grid
+	margin: 0 70px 70px 0
+	aspect-ratio: 1 / 1.1
+	min-width: 300px
+	+r(960)
+        margin: 0 auto 70px auto
+	&__item
+		flex: 50%
+		grid-row-end: 1
+		grid-column-end: 1
+		overflow: hidden
+		// min-width: 500px
+		border-radius: 24px
+		
+	&__item:not(.is-active)
+		filter: opacity(20%)
+		
+	&__item.is-active
+		z-index: 1
+		transform: translate(70px, 70px)
+		+r(960)
+			transform: translateY(70px)
+
+.slider 
+	$this: &
+	&__prev,
+	&__next
+		z-index: 1
+		position: absolute
+		top: 30%
+		width: 56px
+		display: flex
+		align-items: center
+		justify-content: center
+		opacity: 0.75
+		aspect-ratio: 1
+		border-radius: 50%
+		background-color: var(--main-light-color)
+		cursor: pointer
+		+tr(opacity .3s)
+		&:hover
+			opacity: 1
+	&__prev
+		left: 7%
+		#{$this}__prev-icon
+			transform: rotate(90deg)
+	&__next		
+		right: 7%
+		#{$this}__next-icon
+			transform: rotate(-90deg)
+	
+
+.blogs-slider 
+	.swiper-slide
+		opacity: 0.5
+	.is-active
+		opacity: 1
+
+.category-slider
+    padding-bottom: 5px
+
+.contacts-block
+	display: flex	
+	flex-wrap: wrap
+
+.card-blog
+	+r(640)
+		max-width: 100%
+	&__top
+		margin-bottom: 6%
+	&__img
+		overflow: hidden
+		width: 100%
+		aspect-ratio: 1
+	&__info,
+	&__title
+		margin-bottom: 5px
+
+.tag
+	+reset-link
+	+tr(color .3s)
+	font-style: italic
+	color: #C4C4C4
+	&:hover
+		color: var(--main-dark-color)
+
+.info
+	&__item
+		display: inline-flex
+		align-items: center
+		justify-content: space-between
+		+not-last
+			margin-right: 35px
+	&__icon
+		width: 20px
+		height: 20px
+		margin-right: 5px
+	&__text 
+		font: 700 16px/1.2 var(--second-font-bold)
+
+.schedule
+    &__body
+        overflow-x: scroll
+        +scrollbar
+            width: 0
+    &__date
+        width: 230px
+    &__speakers
+        width: 270px
+    &__status
+        width: 300px
+
+.comment
+	// max-width: 770px	
+	&__photo
+		width: 120px
+		margin-bottom: 10px
+	&__text
+		padding: 50px 60px 100px
+		margin-bottom: 40px
+		text-align: center
+		background-color: rgba(#C4C4C4, .2)
+	&__user
+		max-width: 150px
+		margin-top: -104px
+		+mx
+		text-align: center
+	
+
+
+.user
+	&__avatar
+		border-radius: 50%
+	&__about
+		+reset-link
+		color: var(--main-blue-color)
+
+
+.comments-slider
+	&__slide
+		opacity: 0.2
+		&.is-active
+			opacity: 1
+
+.speaker
+	display: flex
+	align-items: center
+	&__photo
+		flex-shrink: 0
+		width: 56px
+		margin-right: 10px

@@ -1,0 +1,63 @@
+{% set 
+slider = {
+class: 'category-slider'
+}
+%}
+
+{% set
+cards = [
+      {
+        cardClass: 'category-card--orange swiper-slide',
+        iconClass: 'dj-mixer',
+        iconAddClass: 'category-card__icon',
+        ttlClass: 'category-card__title',
+        ttlText: 'Pop',
+        text: 'Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae',
+        textClass: 'category-card__text'    
+      },
+      {
+        cardClass: 'category-card--pink swiper-slide',
+        iconClass: 'bagpipes',
+        iconAddClass: 'category-card__icon',
+        ttlClass: 'category-card__title',
+        ttlText: 'Folk',
+        text: 'Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae',
+        textClass: 'category-card__text'
+      },
+      {
+        cardClass: 'category-card--blue swiper-slide',
+        iconClass: 'saxophone',
+        iconAddClass: 'category-card__icon',
+        ttlClass: 'category-card__title',
+        ttlText: 'Instrumental',
+        text: 'Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae',
+        textClass: 'category-card__text'
+      },
+      {
+        cardClass: 'category-card--pink swiper-slide',
+        iconClass: 'guitar',
+        iconAddClass: 'category-card__icon',
+        ttlClass: 'category-card__title',
+        ttlText: 'Rock',
+        text: 'Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae',
+        textClass: 'category-card__text'
+      },
+      {
+        cardClass: 'category-card--light-blue swiper-slide',
+        iconClass: 'trumpet',
+        iconAddClass: 'category-card__icon',
+        ttlClass: 'category-card__title',
+        ttlText: 'Jazz',
+        text: 'Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae',
+        textClass: 'category-card__text'
+      }
+  ]
+%}
+
+{% extends "partials/_slider.html" %}
+
+{% block slide %}
+    {% for card in cards %}
+        {% include "partials/_category-card.html" %}
+    {% endfor %}
+{% endblock %}

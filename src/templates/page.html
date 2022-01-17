@@ -1,0 +1,53 @@
+---
+title: Music
+---
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+  {# {% import "data/data.html" as tests %} #}
+
+  {# {% import "data/data.html" as sectionContent %} #}
+
+  {# BEGIN top section #}
+  {% include "partials/sections/_top-section.html" %}
+  {# END top section #}
+
+  {# BEGIN section category #}
+  {% include "partials/sections/_section-category.html" %}
+  {# END section category #}
+
+  {# BEGIN top section #}
+  {% include "partials/sections/_section-media.html" %}
+  {# END top section #}
+
+  {# BEGIN section event-table #}
+  {% include "partials/sections/_section-event-table.html" %}
+  {# END section event-table #}
+
+  {# BEGIN section category #}
+  {% include "partials/sections/_section-price.html" %}
+  {# END section section-sponsors #}
+
+  {# BEGIN section category #}
+  {% include "partials/sections/_section-sponsors.html" %}
+  {# END section section-sponsors #}
+
+  {# BEGIN section category #}
+  {% include "partials/sections/_section-testimonials.html" %}
+  {# END section section-sponsors #}
+
+  {# BEGIN section form #}
+  {% include "partials/_form.html" %}
+  {# END section form #}
+
+  {# BEGIN section category #}
+  {% include "partials/sections/_section-blogs.html" %}
+  {# END section category #}
+
+  {# BEGIN section contacts #}
+  {% include "partials/sections/_section-contacts.html" %}
+  {# END section contacts #}
+
+{% endblock %}

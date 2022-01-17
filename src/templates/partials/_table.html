@@ -1,0 +1,21 @@
+<table class="event-table {{ eventTable.class }}">
+
+    <thead class="event-table__head">
+        <tr class="event-table__row">
+            {% for title in eventTable.titles %}
+                <th class="event-table__title">{{title.titleText}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+
+    <tbody class="event-table__body">
+        {% for row in eventTable.rows %}
+            <tr class="event-table__row">
+                {% for cell in row.cells %}
+                    <td class="event-table__cell">{{col.text}}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>

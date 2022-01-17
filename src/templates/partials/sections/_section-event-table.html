@@ -1,0 +1,183 @@
+{% extends "../../layouts/_section.html" %}
+{% include "../_table.html" %}
+
+{% set section = {
+    class: 'section-schedule',
+    innerClass: 'section-schedule__inner'
+}%}
+
+{% set
+eventTableRows = [
+    {
+        titles: [
+            {
+                titleText: 'Time'
+            }, {
+                titleText: 'Content'
+            }, {
+                titleText: 'Speakers'
+            }, {
+                titleText: ''
+            }
+        ],
+        rows: [
+            [
+                {
+                    cells: '11:00 AM to 12:00 PM',
+                    cellClass: 'schedule__date'
+                }, {
+                    cells: 'Vestibulum vel eros vel metus lacinia feugiat a nec metus. ',
+                    cellClass: 'schedule__content'
+                }, {
+                    cells: {
+                         user: {
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-2.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Johnny Doe',
+                            about: 'ipsum.com',
+                            aboutLink: 'ipsum.com'
+                        }
+                    },
+                    cellClass: 'schedule__speakers'
+                },
+                {
+                    cells: {
+                        status: {
+                            text: 'Upcoming',
+                            statusClass: 'status__text',
+                            icon: 'clock',
+                            iconClass: 'status__icon'
+                        }
+                    },
+                    cellClass: 'schedule__status'
+                }
+            ],
+
+            [
+                {
+                    cells: '12:00 PM to 03:00 PM',
+                    cellClass: 'schedule__date'
+                }, {
+                    cells: 'Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae, fringilla id magna. Vestibulum ornare eget urna nec pulvinar. Praesent porttitor convallis blandit. Fusce vel egestas dolor. Donec eu augue enim. Donec rutrum non lacus ac rhoncus. Morbi quis luctus leo, nec cursus ex.',
+                    cellClass: 'schedule__content'
+
+                },{
+                    cells: {
+                         user: {
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-2.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Johnny Doe',
+                            about: 'ipsum.com',
+                            aboutLink: 'ipsum.com'
+                        }
+                    },
+                    cellClass: 'schedule__speakers'
+                },
+                {
+                    cells: {
+                        status: {
+                            text: 'Live',
+                            statusClass: 'status__text',
+                            icon: 'live-camera',
+                            iconClass: 'status__icon'
+                        }
+                    },
+                    cellClass: 'schedule__status'
+                }
+            ],
+            [
+                {
+                    cells: '03:00 PM to 04:00 PM',
+                    cellClass: 'schedule__date'
+                }, {
+                    cells: 'Vestibulum vel eros vel metus lacinia feugiat a nec metus. ',
+                    cellClass: 'schedule__content'
+                },{
+                    cells: {
+                         user: {
+                            class: 'speaker',
+                            avatarClass: 'speaker__photo',
+                            avatarUrl: 'img/users/Avatar-2.jpg',
+                            avatarAlt: 'user photo',
+                            nameClass: 'title title--xsmall',
+                            nameText: 'Johnny Doe',
+                            about: 'ipsum.com',
+                            aboutLink: 'ipsum.com'
+                        }
+                    },
+                    cellClass: 'schedule__speakers'
+                },
+                {
+                    cells: {
+                        status: {
+                            text: 'Preview',
+                            statusClass: 'status__text',
+                            icon: 'play',
+                            iconClass: 'status__icon'
+                        }
+                    },
+                    cellClass: 'schedule__status'
+                }
+            ]
+        ]
+    }
+
+] %}
+
+{% block section %}
+    <h3 class="section-schedule__title section__title title title--large">Event Schedule</h3>
+    <div class="schedule">
+        <div class="schedule__head">
+            {% for tab in tabs %}
+                <div class="schedule__tab event-date">
+                    <div class="event-date__day">Day 01</div>
+                    <div class="event-date__date">16 August</div>
+                </div>
+            {% endfor %}
+        </div>
+        {% for table in tables %}
+            <div class="schedule__body">
+                {% include "partials/_table.html" %}
+            </div>
+        {% endfor %}
+        <div class="schedule__body">
+            <table class="table">
+                <thead class="table__head">
+                    <tr class="table__row">
+                        {% for th in (eventTableRows | first).titles %}
+                            <th class="table__title title title--medium">{{th.titleText}}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    {% for rows in (eventTableRows | first).rows %}
+                        <tr class="table__row">
+                            {% for row in rows %}
+                                {% if row.cells.user %}
+                                    <td class="table__cell {{row.cellClass}}">
+                                        {# {% for user in users %} #}
+                                        {{mixins.user(row.cells.user)}}
+                                        {# {% endfor %} #}
+                                    </td>
+                                {% elif row.cells.status %}
+                                    <td class="table__cell {{row.cellClass}}">
+                                        <span class="{{row.cells.status.statusClass}}">{{row.cells.status.text}}</span>
+                                        {{mixins.icon(row.cells.status.icon,row.cells.status.iconClass)}}
+                                    </td>
+                                {% elif row.cells.user != '' %}
+                                    <td class="table__cell {{row.cellClass}}">{{row.cells}}</td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

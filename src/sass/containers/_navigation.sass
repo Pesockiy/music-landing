@@ -1,0 +1,71 @@
+.nav
+    &__list
+        display: flex
+        flex-wrap: wrap
+        &--mobile
+            +r(1000)
+                flex-direction: column
+                align-items: flex-start
+    &__item
+        +not-last
+            margin-right: 25px
+    &__link
+        +reset-link
+        display: inline-block
+        padding: 0.5em 0.5em 0.5em 0
+        font: normal 14px/1.45 var(--base-font-bold)
+        text-transform: uppercase
+        color: var(--main-light-color)
+            
+.sub-menu
+    $this: &
+    $color: var(--main-light-color)
+    position: relative
+    padding-right: 10px
+    &:hover #{$this}__list
+        display: block
+    &.is-active 
+        #{$this}__list
+            +r(1000)
+                position: relative
+                display: flex
+                flex-direction: column
+                background-color: transparent
+        #{$this}__icon
+            top: 2.5em
+    &__list
+        position: absolute
+        display: none
+        width: max-content 
+        padding: 10px
+        background-color: $color
+    &__item
+       +not-last
+        margin-bottom: 10px
+    &__link
+        +reset-link
+        padding: 0.5em
+        color: inherit
+        text-transform: uppercase
+        font: 700 14px/1.2 var(--base-font-bold)
+        &:hover
+            color: var(--main-blue-color)
+        +r(1000)
+            color: var(--main-light-color)
+            &:hover
+                color: var(--main-light-color)
+    &__icon
+        +center(v)
+        right: 0
+        font-size: 0.6em
+        fill: $color
+        +tr(#{ transform .2s})
+        +r(1000)
+            top: 50%
+            
+    &:hover #{$this}__icon
+        top: 75%
+        +r(1000)
+            top: 2em
+            transform: rotate(180deg)
+

@@ -1,0 +1,49 @@
+.price-card
+    --color: var(--main-dark-color)
+    position: relative
+    z-index: 1
+    overflow: hidden
+    display: inline-block
+    width: 100%
+    max-width: 370px 
+    padding: 30px   
+    border-radius: 20px
+    text-align: center
+    box-shadow: 0 20px 100px rgba(34, 34, 34, 0.15)
+
+    &::before
+        content: ''
+        z-index: -1
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        border-top: 4px solid var(--main-dark-color)
+    &_blue
+        --color: var(--main-blue-color)
+        &::before
+            border-top-color: var(--color)
+    &_red
+        --color: var(--main-red-color)
+        &::before
+            border-top-color: var(--color)
+    &__title,
+    &__price
+        color: var(--color)
+    &__ttl
+        margin-bottom: 15px
+        font-size: 24px
+        line-height: 1.5
+    &__price
+        display: inline-block
+        margin-bottom: 30px
+        font: 700 60px/1.2 var(--base-font-bold)
+    &__list
+        margin-bottom: 30px
+    &__item
+        color: var(--main-dark-color)
+        &.is-disabled
+            color: rgba(#222, .5)
+        +not-last
+            margin-bottom: 15px
+

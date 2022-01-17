@@ -1,0 +1,72 @@
+{% set
+socialsClasses = {
+    class: 'footer__socials'
+}
+ %}
+
+{% set
+logo = {
+    class: 'footer__logo'
+}
+ %}
+{% set 
+nav = {
+    class: 'footer__nav'
+}%}
+{% set socials = [
+    {
+        url: 'facebook',
+        nameLink: 'facebook'
+    }, {
+        url: 'twitter',
+        nameLink: 'twitter'
+    }, {
+        url: 'linkedin',
+        nameLink: 'linkedin'
+    }, {
+        liurlnk: 'instagram',
+        nameLink: 'instagram'
+    }
+]
+ %}
+ {% set navLinks = [
+    {
+        url: '#',
+        nameLink: 'home',
+        class: 'footer__nav-link'
+    }, {
+        url: '#',
+        nameLink: 'company',
+        class: 'footer__nav-link'
+    }, {
+        url: '#',
+        nameLink: 'blog',
+        class: 'footer__nav-link'
+    }, {
+        url: '#',
+        nameLink: 'contact us',
+        class: 'footer__nav-link'
+    }, {
+        url: '#',
+        nameLink: 'sitemap',
+        class: 'footer__nav-link'
+    }
+]
+ %}
+<!-- BEGIN footer -->
+<footer class="footer">
+    <div class="footer__inner container">
+        <div class="footer__top">
+            {% include "partials/_logo.html" %}
+        </div>
+        <div class="footer__bottom">
+
+            {% include "partials/_navigation.html" %}
+            {% include "partials/_socials.html" %}
+
+
+            <span class="copy">&copy; musik.com, 2021 </span>
+        </div>
+    </div>
+</footer>
+<!-- END footer -->

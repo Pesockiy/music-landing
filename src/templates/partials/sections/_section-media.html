@@ -1,0 +1,87 @@
+{% set sections = [
+    {
+        galleryType: 0,
+        sectionClass: 'section--reversed',
+        texts: [
+            {
+                title: 'About Musik',
+                text: 'Fusce justo mi, vehicula id arcu et, dapibus tristique lectus. Vivamus a elit sodales, tincidunt nunc non, maximus lacus. Fusce a augue sed dolor auctor iaculis vitae id mauris. Integer ut lectus non neque suscipit luctus. Mauris et erat id ipsum condimentum cursus. Sed tempus enim non massa mattis iaculis. In quis massa risus',
+                buttonText: 'Learn More',
+                buttonIconClass: 'arrow'
+            }
+        ]
+    }, {
+        galleryType: 1,
+        sectionClass: '',
+        texts: [
+            {
+                title: 'Singers',
+                text: 'Fusce justo mi, vehicula id arcu et, dapibus tristique lectus. Vivamus a elit sodales, tincidunt nunc non, maximus lacus. Fusce a augue sed dolor auctor iaculis vitae id mauris. Integer ut lectus non neque suscipit luctus. Mauris et erat id ipsum condimentum cursus. Sed tempus enim non massa mattis iaculis. In quis massa risus',
+                buttonText: 'View All Singers',
+                buttonIconClass: 'arrow'
+            }
+        ]
+    }
+] %}
+
+{% set
+gridGalleryImgUrl = [
+	{'imgUrl': 'img/singers-Img-1'},
+	{'imgUrl': 'img/singers-Img-2'},
+	{'imgUrl': 'img/singers-Img-3'},
+	{'imgUrl': 'img/singers-Img-4'}
+	]
+ %}
+
+{% set
+layerGalleryImages = [
+    {
+        'imgUrl': 'img/gallery/music-1'
+    }, {
+        'imgUrl': 'img/gallery/music-2'
+    }
+]
+ %}
+
+{% for section in sections %}
+
+    <section class="media section  {{section.sectionClass}}" {{section.attr}}>
+        <div class="media__inner section__inner container">
+            <div class="media__text-block">
+
+                {% for text in section.texts %}
+                    <h3 class="section__title title title--medium">{{text.title}}</h3>
+                    <p class="media__text">{{text.text}}</p>
+                    <a href="#" class="media__button button button_blue">{{text.buttonText}}
+                        {{mixins.icon(text.buttonIconClass,'button__icon_arrow')}}</a>
+                {% endfor %}
+            </div>
+
+            {% if section.galleryType == 0 %}
+                <div class="media__layer-gallery layer-gallery">
+
+                    {% for layerGalleryImage in layerGalleryImages %}
+                        <picture class="layer-gallery__item picture-box {% if loop.last %} is-active {% endif %}">
+                            <source class="picture-box__item layer-gallery__img" srcset="{{layerGalleryImage.imgUrl}}.webp"
+            type="image/webp">
+                            <img class="picture-box__item layer-gallery__img" src="{{layerGalleryImage.imgUrl}}.jpg"
+            alt="{{layerGalleryImage.imgAlt}}">
+                        </picture>
+                    {% endfor %}
+                </div>
+            {% elif section.galleryType == 1 %}
+
+                <div class="media__grid-gallery grid-gallery">
+                    {% for urls in gridGalleryImgUrl %}
+                        <div class="grid-gallery__item">
+                            <picture class="grid-gallery__box picture-box js-image">
+                                <source class="picture-box__item grid-gallery__img" srcset="{{urls.imgUrl}}.webp" type="image/webp">
+                                <img class="picture-box__item grid-gallery__img" src="{{urls.imgUrl}}.jpg" alt="{{imgAlt}}">
+                            </picture>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </section>
+{% endfor %}
