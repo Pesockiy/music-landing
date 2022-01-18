@@ -10,14 +10,14 @@ class: 'comments-slider'
 %}
 
 {% set comments = [
-      {
+{
         class: 'swiper-slide comments-slider__slide',
         text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         textClass: '',
         user: {
             class: 'comment__user',
             avatarClass: 'comment__photo',
-            avatarUrl: 'img/users/Avatar-1.jpg',
+            avatarUrl: 'img/users/Avatar-6.jpg',
             avatarAlt: 'user photo',
             nameClass: 'title title--small',
             nameText: 'Johnny Doe',
@@ -32,7 +32,22 @@ class: 'comments-slider'
         user: {
             class: 'comment__user',
             avatarClass: 'comment__photo',
-            avatarUrl: 'img/users/Avatar-1.jpg',
+            avatarUrl: 'img/users/Avatar-7.jpg',
+            avatarAlt: 'user photo',
+            nameClass: 'title title--small',
+            nameText: 'Johnny Doe',
+            about: 'ipsum.com',
+            aboutLink: 'ipsum.com'
+        }
+      },
+      {
+        class: 'swiper-slide comments-slider__slide',
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        textClass: '',
+        user: {
+            class: 'comment__user',
+            avatarClass: 'comment__photo',
+            avatarUrl: 'img/users/Avatar-8.jpg',
             avatarAlt: 'user photo',
             nameClass: 'title title--small',
             nameText: 'Johnny Doe',
@@ -46,7 +61,6 @@ class: 'comments-slider'
   <div class="container">
     <h2 class="section__title testimonials__title title title--large">Testimonials</h2>
   </div>
-
   <!-- BEGIN slider -->
   <div class="swiper {{slider.class}}">
     <!-- Additional required wrapper -->

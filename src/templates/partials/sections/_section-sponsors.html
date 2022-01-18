@@ -1,3 +1,4 @@
+{% set confetti = [13, 14] %}
 {% set spansors = [ 
     {
         imgUrl: 'img/sponsors/google.png',
@@ -33,18 +34,23 @@
     }
 ]%}
 
-<!-- BEGIN section sponsors -->
-<section class="section sponsors" {{'id=sponsors'}}>
-    <div class="sponsors__inner container">
-        <h2 class="sponsors__title section__title title title--large">Our Sponsors</h2>
-        <div class="sponsors-block {{sponsor.class}}">
-            {% for sponsor in spansors %}
-                <img class="sponsors-block__img" src="{{sponsor.imgUrl}}" alt="{{sponsor.imgAlt}}">
-            {% endfor %}
+<div class="wrapper">
+    <!-- BEGIN section sponsors -->
+    <section class="section sponsors" {{'id=sponsors'}}>
+        <div class="sponsors__inner container">
+            <h2 class="sponsors__title section__title title title--large">Our Sponsors</h2>
+            <div class="sponsors-block {{sponsor.class}}">
+                {% for sponsor in spansors %}
+                    <img class="sponsors-block__img" src="{{sponsor.imgUrl}}" alt="{{sponsor.imgAlt}}">
+                {% endfor %}
+            </div>
         </div>
-    </div>
-    <div class="container">
-        {{mixins.button('button_blue sponsors__button', 'Become a Sponsor')}}
-    </div>
-</section>
-<!-- END section sponsors -->
+        <div class="container">
+            {{mixins.button('button_blue sponsors__button', 'Become a Sponsor')}}
+        </div>
+    </section>
+    <!-- END section sponsors -->
+    {% for conf in confetti %}
+        {{mixins.confetti(conf)}}
+    {% endfor %}
+</div>

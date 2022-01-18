@@ -1,3 +1,4 @@
+<!-- BEGIN table -->
 <table class="table">
     <thead class="table__head">
         <tr class="table__row">
@@ -7,10 +8,8 @@
         </tr>
     </thead>
     <tbody class="table__body">
-        {# {% for rows in (eventTableRows | first).rows %} #}
         {% for rows in table.rows %}
             <tr class="table__row">
-                {# {% for row in rows %} #}
                 {% for row in rows %}
                     {% if row.cells.user %}
                         <td class="table__cell {{row.cellClass}}">
@@ -31,3 +30,4 @@
         {% endfor %}
     </tbody>
 </table>
+<!-- END table -->

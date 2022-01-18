@@ -1,3 +1,5 @@
+{% set confetti = [1, 2, 3, 4] %}
+
 <!-- BEGIN section category -->
 <section class="section category">
   <div class="section__inner container">
@@ -5,6 +7,10 @@
   </div>
   <div class="wrapper">
     {% include "../../partials/_category-slider.html" %}
+
+    {% for conf in confetti %}
+      {{mixins.confetti(conf)}}
+    {% endfor %}
   </div>
 </section>
 <!-- END section category-->

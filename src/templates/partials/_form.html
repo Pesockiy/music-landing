@@ -21,12 +21,12 @@
 ] %}
     <form action="handler" method="post" class="{{form.class}}" id="contact-form">
         {% for input in inputs %}
-            <div class="form__item">
+            <div class="form__item js-form-item" data-text="">
                 <label class="form__label" for="{{input.id}}">{{input.name}}</label>
                 {{mixins.input(input)}}
             </div>
         {% endfor %}
-        <div class="form__item">
+        <div class="form__item js-form-item" data-text="">
             <label class="form__label" for="message">message</label>
             <textarea class="form__message js-form-field" name="message" id="message" placeholder="message"></textarea>
         </div>

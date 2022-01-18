@@ -1,8 +1,8 @@
-import Swiper, { Pagination, Navigation, Autoplay, Thumbs } from "swiper";
+import Swiper, { Pagination, Navigation, Autoplay } from "swiper";
 
-Swiper.use([Navigation, Pagination, Autoplay, Thumbs]);
+Swiper.use([Navigation, Pagination, Autoplay]);
 
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
     if (document.querySelector('.category-slider')) {
         const topSlider = new Swiper('.category-slider', {
             slideActiveClass: 'is-active',

@@ -1,3 +1,5 @@
+{% set confetti = [5, 6, 7, 8] %}
+
 {% set sections = [
     {
         galleryType: 0,
@@ -43,45 +45,54 @@ layerGalleryImages = [
 ]
  %}
 
-{% for section in sections %}
+<div class="wrapper">
+    {% for section in sections %}
+        <!-- BEGIN section media -->
+        <section class="media section  {{section.sectionClass}}" {{section.attr}}>
+            <div class="media__inner section__inner container">
+                <div class="media__text-block">
 
-    <section class="media section  {{section.sectionClass}}" {{section.attr}}>
-        <div class="media__inner section__inner container">
-            <div class="media__text-block">
-
-                {% for text in section.texts %}
-                    <h3 class="section__title title title--medium">{{text.title}}</h3>
-                    <p class="media__text">{{text.text}}</p>
-                    <a href="#" class="media__button button button_blue">{{text.buttonText}}
-                        {{mixins.icon(text.buttonIconClass,'button__icon_arrow')}}</a>
-                {% endfor %}
-            </div>
-
-            {% if section.galleryType == 0 %}
-                <div class="media__layer-gallery layer-gallery">
-
-                    {% for layerGalleryImage in layerGalleryImages %}
-                        <picture class="layer-gallery__item picture-box {% if loop.last %} is-active {% endif %}">
-                            <source class="picture-box__item layer-gallery__img" srcset="{{layerGalleryImage.imgUrl}}.webp"
+                    {% for text in section.texts %}
+                        <h3 class="section__title title title--medium">{{text.title}}</h3>
+                        <p class="media__text">{{text.text}}</p>
+                        <a href="#" class="media__button button button_blue">{{text.buttonText}}
+                            {{mixins.icon(text.buttonIconClass,'button__icon_arrow')}}</a>
+                    {% endfor %}
+                </div>
+                {% if section.galleryType == 0 %}
+                    <!-- BEGIN layer-gallery -->
+                    <div class="media__layer-gallery layer-gallery">
+                        {% for layerGalleryImage in layerGalleryImages %}
+                            <picture class="layer-gallery__item picture-box {% if loop.last %} is-active {% endif %}">
+                                <source class="picture-box__item layer-gallery__img" srcset="{{layerGalleryImage.imgUrl}}.webp"
             type="image/webp">
-                            <img class="picture-box__item layer-gallery__img" src="{{layerGalleryImage.imgUrl}}.jpg"
+                                <img class="picture-box__item layer-gallery__img" src="{{layerGalleryImage.imgUrl}}.jpg"
             alt="{{layerGalleryImage.imgAlt}}">
-                        </picture>
-                    {% endfor %}
-                </div>
-            {% elif section.galleryType == 1 %}
-
-                <div class="media__grid-gallery grid-gallery">
-                    {% for urls in gridGalleryImgUrl %}
-                        <div class="grid-gallery__item">
-                            <picture class="grid-gallery__box picture-box js-image">
-                                <source class="picture-box__item grid-gallery__img" srcset="{{urls.imgUrl}}.webp" type="image/webp">
-                                <img class="picture-box__item grid-gallery__img" src="{{urls.imgUrl}}.jpg" alt="{{imgAlt}}">
                             </picture>
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-    </section>
-{% endfor %}
+                        {% endfor %}
+                    </div>
+                    <!-- END grid-gallery -->
+                {% elif section.galleryType == 1 %}
+                    <!-- BEGIN gallery -->
+                    <div class="media__grid-gallery grid-gallery" id="speakers">
+                        {% for urls in gridGalleryImgUrl %}
+                            <div class="grid-gallery__item">
+                                <picture class="grid-gallery__box picture-box js-image">
+                                    <source class="picture-box__item grid-gallery__img" srcset="{{urls.imgUrl}}.webp" type="image/webp">
+                                    <img class="picture-box__item grid-gallery__img" src="{{urls.imgUrl}}.jpg" alt="{{imgAlt}}">
+                                </picture>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <!-- END gallery -->
+                {% endif %}
+            </div>
+        </section>
+        <!-- END section media -->
+
+    {% endfor %}
+    {% for conf in confetti %}
+        {{mixins.confetti(conf)}}
+    {% endfor %}
+
+</div>

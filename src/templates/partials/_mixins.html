@@ -14,7 +14,7 @@
           {{user.about}}
         </a>
       {% elif user.description %}
-        <span href="{{user.description}}" class="user__description">
+        <span class="user__description">
           {{user.description}}
           {% if user.subdescription %}
             <span class="{{user.subdescriptionClass}}">{{user.subdescription}}</span>
@@ -73,5 +73,10 @@
 {% endmacro %}
 
 {% macro input(input) %}
-  <input class="input {{input.class}}" type="{{input.type}}" id="{{input.id}}" name="{{input.name}}" placeholder="{{input.placeholder}}" required="{{input.required}}">
+  <input class="input {{input.class}}" type="{{input.type}}" id="{{input.id}}" name="{{input.name}}" placeholder="{{input.placeholder}}" 
+  {% if input.required %} required {% endif %}>
+{% endmacro %}
+
+{% macro confetti(i, cl) %}
+  <img class="confetti confetti--{{i}} {{cl}}" src="img/confetti/Confetti-{{i}}.svg" alt="confetti"/>
 {% endmacro %}

@@ -1,9 +1,4 @@
-{% extends "../../layouts/_section.html" %}
-
-{% set section = {
-    class: 'section-schedule',
-    innerClass: 'section-schedule__inner'
-}%}
+{% set confetti = [9, 10, 11, 12] %}
 
 {% set tabs = [
     {
@@ -485,25 +480,38 @@ eventTableRows = [
 
 ] %}
 
-{% block section %}
-    <h3 class="section-schedule__title section__title title title--large">Event Schedule</h3>
-    <div class="schedule">
-        <div class="schedule__head">
-            {% for tab in tabs %}
-                <div class="schedule__tab {{tab.active}} event-date">
-                    <div class="event-date__day">{{tab.day}}</div>
-                    <div class="event-date__date">{{tab.date}}</div>
+<!-- BEGIN schedule -->
+<section class="section section-schedule" >
+    <div class="wrapper">
+        <div class="section-schedule__inner container">
+            <h3 class="section-schedule__title section__title title title--large">Event Schedule</h3>
+            <!-- BEGIN schedule -->
+            <section class="schedule" id="schedule">
+                <!-- BEGIN schedule head -->
+                <div class="schedule__head">
+                    {% for tab in tabs %}
+                        <div class="schedule__tab {{tab.active}} event-date">
+                            <div class="event-date__day">{{tab.day}}</div>
+                            <div class="event-date__date">{{tab.date}}</div>
+                        </div>
+                    {% endfor %}
                 </div>
+                <!-- EBD section-schedule -->
+                {% for table in tables %}{% endfor %}
+                {% for table in eventTableRows %}
+                    <!-- BEGIN schedule body -->
+                    <div class="schedule__body {% if loop.index == 1 %} is-active {% endif %}">
+                        {% include "partials/_table.html" %}
+                    </div>
+                    <!-- END schedule body -->
+                {% endfor %}
+            </section>
+            <!-- END schedule -->
+
+            {% for conf in confetti %}
+                {{mixins.confetti(conf)}}
             {% endfor %}
         </div>
-        {% for table in tables %}
-            <div class="schedule__body {% if (loop.index == 0) %} is-active {% endif %}">
-            </div>
-        {% endfor %}
-        {% for table in eventTableRows %}
-            <div class="schedule__body {% if loop.index == 1 %} is-active {% endif %}">
-                {% include "partials/_table.html" %}
-            </div>
-        {% endfor %}
     </div>
-{% endblock %}
+</section>
+<!-- END schedule -->

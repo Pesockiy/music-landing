@@ -1,9 +1,4 @@
-{% extends "../../layouts/_section.html" %}
-
-{% set section = {
-    class: 'price',
-    innerClass: 'price__inner'
-} %}
+{% set confetti = [15, 16] %}
 
 {% set cards = [
     {
@@ -74,11 +69,20 @@
     }
     ]%}
 
-{% block section %}
-    <h3 class="section__title title title--large {{section.class}}__ttl">Choose a Tier that’s right for you</h3>
-    <div class="price__content">
-        {% for card in cards %}
-            {% include "../../partials/_price-card.html" %}
+<!-- BEGIN price -->
+<section class="section price">
+    <div class="wrapper">
+        <div class="price__inner container">
+            <h3 class="section__title price__title title title--large {{section.class}}__ttl">Choose a Tier that’s right for you</h3>
+            <div class="price__content">
+                {% for card in cards %}
+                    {% include "../../partials/_price-card.html" %}
+                {% endfor %}
+            </div>
+        </div>
+        {% for conf in confetti %}
+            {{mixins.confetti(conf)}}
         {% endfor %}
     </div>
-{% endblock %}
+</section>
+<!-- END price -->

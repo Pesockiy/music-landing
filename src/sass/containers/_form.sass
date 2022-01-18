@@ -5,6 +5,10 @@
     &__item
         +not-last
             margin-bottom: 30px
+        &::before
+            content: attr(data-text)
+            float: right
+            color: var(--main-red-color)
         &.is-active
             #{$this}__label
                 color: $color
@@ -23,6 +27,7 @@
         padding-bottom: 8px
         font: 400 16px/1.5 var(--base-font)
         border-bottom: 1px solid #E0E0E0
+        background-color: transparent
     &__label
         font: 700 12px/1.5 var(--base-font-bold)
         text-transform: capitalize

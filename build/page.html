@@ -31,7 +31,7 @@
                 <svg class="icon icon-arrow-down-3 sub-menu__icon">
                   <use xlink:href="img/sprite.svg#icon-arrow-down-3"></use>
                 </svg>
-                <a class="nav__link header__nav-link" href="#">speakers</a>
+                <a class="nav__link header__nav-link" href="#speakers">speakers</a>
                 <!-- BEGIN sub-menu__list -->
                 <ul class="sub-menu__list">
                   <li class="sub-menu__item">
@@ -53,7 +53,7 @@
                 <svg class="icon icon-arrow-down-3 sub-menu__icon">
                   <use xlink:href="img/sprite.svg#icon-arrow-down-3"></use>
                 </svg>
-                <a class="nav__link header__nav-link" href="#sponsors">Schedule</a>
+                <a class="nav__link header__nav-link" href="#schedule">Schedule</a>
                 <!-- BEGIN sub-menu__list -->
                 <ul class="sub-menu__list">
                   <li class="sub-menu__item">
@@ -72,7 +72,7 @@
                 <!-- END sub-menu__list -->
               </li>
               <li class="nav__item header__item">
-                <a class="nav__link header__nav-link" href="#">contact us</a>
+                <a class="nav__link header__nav-link" href="#contact">contact us</a>
               </li>
             </ul>
           </nav>
@@ -102,7 +102,7 @@
               </svg> Watch Video</button>
           </div>
         </div>
-        <div class="big-text">22d 13h 46m 18s</div>
+        <div class="big-text js-timer">22d 13h 46m 18s</div>
       </section>
       <!-- END section -->
       <!-- BEGIN section category -->
@@ -154,435 +154,483 @@
             </div>
           </div>
           <!-- END slider -->
+          <img class="confetti confetti--1 " src="img/confetti/Confetti-1.svg" alt="confetti" />
+          <img class="confetti confetti--2 " src="img/confetti/Confetti-2.svg" alt="confetti" />
+          <img class="confetti confetti--3 " src="img/confetti/Confetti-3.svg" alt="confetti" />
+          <img class="confetti confetti--4 " src="img/confetti/Confetti-4.svg" alt="confetti" />
         </div>
       </section>
       <!-- END section category-->
-      <section class="media section  section--reversed">
-        <div class="media__inner section__inner container">
-          <div class="media__text-block">
-            <h3 class="section__title title title--medium">About Musik</h3>
-            <p class="media__text">Fusce justo mi, vehicula id arcu et, dapibus tristique lectus. Vivamus a elit sodales, tincidunt nunc non, maximus lacus. Fusce a augue sed dolor auctor iaculis vitae id mauris. Integer ut lectus non neque suscipit luctus. Mauris et erat id ipsum condimentum cursus. Sed tempus enim non massa mattis iaculis. In quis massa risus</p>
-            <a href="#" class="media__button button button_blue">Learn More <svg class="icon icon-arrow button__icon_arrow">
-                <use xlink:href="img/sprite.svg#icon-arrow"></use>
-              </svg>
-            </a>
-          </div>
-          <div class="media__layer-gallery layer-gallery">
-            <picture class="layer-gallery__item picture-box ">
-              <source class="picture-box__item layer-gallery__img" srcset="img/gallery/music-1.webp" type="image/webp">
-              <img class="picture-box__item layer-gallery__img" src="img/gallery/music-1.jpg" alt="">
-            </picture>
-            <picture class="layer-gallery__item picture-box  is-active ">
-              <source class="picture-box__item layer-gallery__img" srcset="img/gallery/music-2.webp" type="image/webp">
-              <img class="picture-box__item layer-gallery__img" src="img/gallery/music-2.jpg" alt="">
-            </picture>
-          </div>
-        </div>
-      </section>
-      <section class="media section  ">
-        <div class="media__inner section__inner container">
-          <div class="media__text-block">
-            <h3 class="section__title title title--medium">Singers</h3>
-            <p class="media__text">Fusce justo mi, vehicula id arcu et, dapibus tristique lectus. Vivamus a elit sodales, tincidunt nunc non, maximus lacus. Fusce a augue sed dolor auctor iaculis vitae id mauris. Integer ut lectus non neque suscipit luctus. Mauris et erat id ipsum condimentum cursus. Sed tempus enim non massa mattis iaculis. In quis massa risus</p>
-            <a href="#" class="media__button button button_blue">View All Singers <svg class="icon icon-arrow button__icon_arrow">
-                <use xlink:href="img/sprite.svg#icon-arrow"></use>
-              </svg>
-            </a>
-          </div>
-          <div class="media__grid-gallery grid-gallery">
-            <div class="grid-gallery__item">
-              <picture class="grid-gallery__box picture-box js-image">
-                <source class="picture-box__item grid-gallery__img" srcset="img/singers-Img-1.webp" type="image/webp">
-                <img class="picture-box__item grid-gallery__img" src="img/singers-Img-1.jpg" alt="">
+      <div class="wrapper">
+        <!-- BEGIN section media -->
+        <section class="media section  section--reversed">
+          <div class="media__inner section__inner container">
+            <div class="media__text-block">
+              <h3 class="section__title title title--medium">About Musik</h3>
+              <p class="media__text">Fusce justo mi, vehicula id arcu et, dapibus tristique lectus. Vivamus a elit sodales, tincidunt nunc non, maximus lacus. Fusce a augue sed dolor auctor iaculis vitae id mauris. Integer ut lectus non neque suscipit luctus. Mauris et erat id ipsum condimentum cursus. Sed tempus enim non massa mattis iaculis. In quis massa risus</p>
+              <a href="#" class="media__button button button_blue">Learn More <svg class="icon icon-arrow button__icon_arrow">
+                  <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                </svg>
+              </a>
+            </div>
+            <!-- BEGIN layer-gallery -->
+            <div class="media__layer-gallery layer-gallery">
+              <picture class="layer-gallery__item picture-box ">
+                <source class="picture-box__item layer-gallery__img" srcset="img/gallery/music-1.webp" type="image/webp">
+                <img class="picture-box__item layer-gallery__img" src="img/gallery/music-1.jpg" alt="">
+              </picture>
+              <picture class="layer-gallery__item picture-box  is-active ">
+                <source class="picture-box__item layer-gallery__img" srcset="img/gallery/music-2.webp" type="image/webp">
+                <img class="picture-box__item layer-gallery__img" src="img/gallery/music-2.jpg" alt="">
               </picture>
             </div>
-            <div class="grid-gallery__item">
-              <picture class="grid-gallery__box picture-box js-image">
-                <source class="picture-box__item grid-gallery__img" srcset="img/singers-Img-2.webp" type="image/webp">
-                <img class="picture-box__item grid-gallery__img" src="img/singers-Img-2.jpg" alt="">
-              </picture>
-            </div>
-            <div class="grid-gallery__item">
-              <picture class="grid-gallery__box picture-box js-image">
-                <source class="picture-box__item grid-gallery__img" srcset="img/singers-Img-3.webp" type="image/webp">
-                <img class="picture-box__item grid-gallery__img" src="img/singers-Img-3.jpg" alt="">
-              </picture>
-            </div>
-            <div class="grid-gallery__item">
-              <picture class="grid-gallery__box picture-box js-image">
-                <source class="picture-box__item grid-gallery__img" srcset="img/singers-Img-4.webp" type="image/webp">
-                <img class="picture-box__item grid-gallery__img" src="img/singers-Img-4.jpg" alt="">
-              </picture>
-            </div>
+            <!-- END grid-gallery -->
           </div>
-        </div>
-      </section>
-      <!-- BEGIN section-schedule -->
+        </section>
+        <!-- END section media -->
+        <!-- BEGIN section media -->
+        <section class="media section  ">
+          <div class="media__inner section__inner container">
+            <div class="media__text-block">
+              <h3 class="section__title title title--medium">Singers</h3>
+              <p class="media__text">Fusce justo mi, vehicula id arcu et, dapibus tristique lectus. Vivamus a elit sodales, tincidunt nunc non, maximus lacus. Fusce a augue sed dolor auctor iaculis vitae id mauris. Integer ut lectus non neque suscipit luctus. Mauris et erat id ipsum condimentum cursus. Sed tempus enim non massa mattis iaculis. In quis massa risus</p>
+              <a href="#" class="media__button button button_blue">View All Singers <svg class="icon icon-arrow button__icon_arrow">
+                  <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                </svg>
+              </a>
+            </div>
+            <!-- BEGIN gallery -->
+            <div class="media__grid-gallery grid-gallery" id="speakers">
+              <div class="grid-gallery__item">
+                <picture class="grid-gallery__box picture-box js-image">
+                  <source class="picture-box__item grid-gallery__img" srcset="img/singers-Img-1.webp" type="image/webp">
+                  <img class="picture-box__item grid-gallery__img" src="img/singers-Img-1.jpg" alt="">
+                </picture>
+              </div>
+              <div class="grid-gallery__item">
+                <picture class="grid-gallery__box picture-box js-image">
+                  <source class="picture-box__item grid-gallery__img" srcset="img/singers-Img-2.webp" type="image/webp">
+                  <img class="picture-box__item grid-gallery__img" src="img/singers-Img-2.jpg" alt="">
+                </picture>
+              </div>
+              <div class="grid-gallery__item">
+                <picture class="grid-gallery__box picture-box js-image">
+                  <source class="picture-box__item grid-gallery__img" srcset="img/singers-Img-3.webp" type="image/webp">
+                  <img class="picture-box__item grid-gallery__img" src="img/singers-Img-3.jpg" alt="">
+                </picture>
+              </div>
+              <div class="grid-gallery__item">
+                <picture class="grid-gallery__box picture-box js-image">
+                  <source class="picture-box__item grid-gallery__img" srcset="img/singers-Img-4.webp" type="image/webp">
+                  <img class="picture-box__item grid-gallery__img" src="img/singers-Img-4.jpg" alt="">
+                </picture>
+              </div>
+            </div>
+            <!-- END gallery -->
+          </div>
+        </section>
+        <!-- END section media -->
+        <img class="confetti confetti--5 " src="img/confetti/Confetti-5.svg" alt="confetti" />
+        <img class="confetti confetti--6 " src="img/confetti/Confetti-6.svg" alt="confetti" />
+        <img class="confetti confetti--7 " src="img/confetti/Confetti-7.svg" alt="confetti" />
+        <img class="confetti confetti--8 " src="img/confetti/Confetti-8.svg" alt="confetti" />
+      </div>
+      <!-- BEGIN schedule -->
       <section class="section section-schedule">
-        <div class="section-schedule__inner container">
-          <h3 class="section-schedule__title section__title title title--large">Event Schedule</h3>
-          <div class="schedule">
-            <div class="schedule__head">
-              <div class="schedule__tab is-active event-date">
-                <div class="event-date__day">Day 01</div>
-                <div class="event-date__date">16 August</div>
+        <div class="wrapper">
+          <div class="section-schedule__inner container">
+            <h3 class="section-schedule__title section__title title title--large">Event Schedule</h3>
+            <!-- BEGIN schedule -->
+            <section class="schedule" id="schedule">
+              <!-- BEGIN schedule head -->
+              <div class="schedule__head">
+                <div class="schedule__tab is-active event-date">
+                  <div class="event-date__day">Day 01</div>
+                  <div class="event-date__date">16 August</div>
+                </div>
+                <div class="schedule__tab  event-date">
+                  <div class="event-date__day">Day 02</div>
+                  <div class="event-date__date">17 August</div>
+                </div>
+                <div class="schedule__tab  event-date">
+                  <div class="event-date__day">Day 03</div>
+                  <div class="event-date__date">18 August</div>
+                </div>
               </div>
-              <div class="schedule__tab  event-date">
-                <div class="event-date__day">Day 02</div>
-                <div class="event-date__date">17 August</div>
+              <!-- EBD section-schedule -->
+              <!-- BEGIN schedule body -->
+              <div class="schedule__body  is-active ">
+                <!-- BEGIN table -->
+                <table class="table">
+                  <thead class="table__head">
+                    <tr class="table__row">
+                      <th class="table__title title title--medium">Time</th>
+                      <th class="table__title title title--medium">Content</th>
+                      <th class="table__title title title--medium">Speakers</th>
+                      <th class="table__title title title--medium"></th>
+                    </tr>
+                  </thead>
+                  <tbody class="table__body">
+                    <tr class="table__row">
+                      <td class="table__cell schedule__date">11:00 AM to 12:00 PM</td>
+                      <td class="table__cell schedule__content">Vestibulum vel eros vel metus lacinia feugiat a nec metus. </td>
+                      <td class="table__cell schedule__speakers">
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-1.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Yui Ronald</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description"> 2F12</span>
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="table__cell schedule__status">
+                        <span class="schedule__status-text">Upcoming</span>
+                        <svg class="icon icon-clock schedule__status-icon">
+                          <use xlink:href="img/sprite.svg#icon-clock"></use>
+                        </svg>
+                      </td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__cell schedule__date">12:00 PM to 03:00 PM</td>
+                      <td class="table__cell schedule__content">Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae, fringilla id magna. Vestibulum ornare eget urna nec pulvinar. Praesent porttitor convallis blandit. Fusce vel egestas dolor. Donec eu augue enim. Donec rutrum non lacus ac rhoncus. Morbi quis luctus leo, nec cursus ex.</td>
+                      <td class="table__cell schedule__speakers">
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-2.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Johnny Doe</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description">3G12</span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-1.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Yui Ronald</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description">2F12</span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-3.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Emma Satoshi</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description">2A35</span>
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="table__cell schedule__status is-active">
+                        <span class="schedule__status-text">Live</span>
+                        <svg class="icon icon-live-camera schedule__status-icon">
+                          <use xlink:href="img/sprite.svg#icon-live-camera"></use>
+                        </svg>
+                      </td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__cell schedule__date">03:00 PM to 04:00 PM</td>
+                      <td class="table__cell schedule__content">Vestibulum vel eros vel metus lacinia feugiat a nec metus. </td>
+                      <td class="table__cell schedule__speakers">
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-4.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Sasha Jackson</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description">2F18</span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-5.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Diana Brock</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description">2F24</span>
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="table__cell schedule__status">
+                        <span class="schedule__status-text">Preview</span>
+                        <svg class="icon icon-play schedule__status-icon">
+                          <use xlink:href="img/sprite.svg#icon-play"></use>
+                        </svg>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- END table -->
               </div>
-              <div class="schedule__tab  event-date">
-                <div class="event-date__day">Day 03</div>
-                <div class="event-date__date">18 August</div>
+              <!-- END schedule body -->
+              <!-- BEGIN schedule body -->
+              <div class="schedule__body ">
+                <!-- BEGIN table -->
+                <table class="table">
+                  <thead class="table__head">
+                    <tr class="table__row">
+                      <th class="table__title title title--medium">Time</th>
+                      <th class="table__title title title--medium">Content</th>
+                      <th class="table__title title title--medium">Speakers</th>
+                      <th class="table__title title title--medium"></th>
+                    </tr>
+                  </thead>
+                  <tbody class="table__body">
+                    <tr class="table__row">
+                      <td class="table__cell schedule__date">11:00 AM to 12:00 PM</td>
+                      <td class="table__cell schedule__content">Vestibulum vel eros vel metus lacinia feugiat a nec metus. </td>
+                      <td class="table__cell schedule__speakers">
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-1.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Yui Ronald</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description"> 2F12</span>
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="table__cell schedule__status">
+                        <span class="schedule__status-text">Upcoming</span>
+                        <svg class="icon icon-clock schedule__status-icon">
+                          <use xlink:href="img/sprite.svg#icon-clock"></use>
+                        </svg>
+                      </td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__cell schedule__date">12:00 PM to 03:00 PM</td>
+                      <td class="table__cell schedule__content">Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae, fringilla id magna. Vestibulum ornare eget urna nec pulvinar. Praesent porttitor convallis blandit. Fusce vel egestas dolor. Donec eu augue enim. Donec rutrum non lacus ac rhoncus. Morbi quis luctus leo, nec cursus ex.</td>
+                      <td class="table__cell schedule__speakers">
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-1.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Yui Ronald</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description">2F12</span>
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="table__cell schedule__status is-active">
+                        <span class="schedule__status-text">Live</span>
+                        <svg class="icon icon-live-camera schedule__status-icon">
+                          <use xlink:href="img/sprite.svg#icon-live-camera"></use>
+                        </svg>
+                      </td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__cell schedule__date">03:00 PM to 04:00 PM</td>
+                      <td class="table__cell schedule__content">Vestibulum vel eros vel metus lacinia feugiat a nec metus. </td>
+                      <td class="table__cell schedule__speakers">
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-4.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Sasha Jackson</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description">2F18</span>
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="table__cell schedule__status">
+                        <span class="schedule__status-text">Preview</span>
+                        <svg class="icon icon-play schedule__status-icon">
+                          <use xlink:href="img/sprite.svg#icon-play"></use>
+                        </svg>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- END table -->
               </div>
-            </div>
-            <div class="schedule__body  is-active ">
-              <table class="table">
-                <thead class="table__head">
-                  <tr class="table__row">
-                    <th class="table__title title title--medium">Time</th>
-                    <th class="table__title title title--medium">Content</th>
-                    <th class="table__title title title--medium">Speakers</th>
-                    <th class="table__title title title--medium"></th>
-                  </tr>
-                </thead>
-                <tbody class="table__body">
-                  <tr class="table__row">
-                    <td class="table__cell schedule__date">11:00 AM to 12:00 PM</td>
-                    <td class="table__cell schedule__content">Vestibulum vel eros vel metus lacinia feugiat a nec metus. </td>
-                    <td class="table__cell schedule__speakers">
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-1.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Yui Ronald</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description"> 2F12</span>
-                          </span>
+              <!-- END schedule body -->
+              <!-- BEGIN schedule body -->
+              <div class="schedule__body ">
+                <!-- BEGIN table -->
+                <table class="table">
+                  <thead class="table__head">
+                    <tr class="table__row">
+                      <th class="table__title title title--medium">Time</th>
+                      <th class="table__title title title--medium">Content</th>
+                      <th class="table__title title title--medium">Speakers</th>
+                      <th class="table__title title title--medium"></th>
+                    </tr>
+                  </thead>
+                  <tbody class="table__body">
+                    <tr class="table__row">
+                      <td class="table__cell schedule__date">11:00 AM to 12:00 PM</td>
+                      <td class="table__cell schedule__content">Vestibulum vel eros vel metus lacinia feugiat a nec metus. </td>
+                      <td class="table__cell schedule__speakers">
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-1.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Yui Ronald</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description"> 2F12</span>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td class="table__cell schedule__status">
-                      <span class="schedule__status-text">Upcoming</span>
-                      <svg class="icon icon-clock schedule__status-icon">
-                        <use xlink:href="img/sprite.svg#icon-clock"></use>
-                      </svg>
-                    </td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__cell schedule__date">12:00 PM to 03:00 PM</td>
-                    <td class="table__cell schedule__content">Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae, fringilla id magna. Vestibulum ornare eget urna nec pulvinar. Praesent porttitor convallis blandit. Fusce vel egestas dolor. Donec eu augue enim. Donec rutrum non lacus ac rhoncus. Morbi quis luctus leo, nec cursus ex.</td>
-                    <td class="table__cell schedule__speakers">
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-2.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Johnny Doe</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description">3G12</span>
-                          </span>
+                      </td>
+                      <td class="table__cell schedule__status">
+                        <span class="schedule__status-text">Upcoming</span>
+                        <svg class="icon icon-clock schedule__status-icon">
+                          <use xlink:href="img/sprite.svg#icon-clock"></use>
+                        </svg>
+                      </td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__cell schedule__date">12:00 PM to 03:00 PM</td>
+                      <td class="table__cell schedule__content">Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae, fringilla id magna. Vestibulum ornare eget urna nec pulvinar. Praesent porttitor convallis blandit. Fusce vel egestas dolor. Donec eu augue enim. Donec rutrum non lacus ac rhoncus. Morbi quis luctus leo, nec cursus ex.</td>
+                      <td class="table__cell schedule__speakers">
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-2.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Johnny Doe</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description">3G12</span>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-1.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Yui Ronald</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description">2F12</span>
-                          </span>
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-1.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Yui Ronald</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description">2F12</span>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-3.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Emma Satoshi</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description">2A35</span>
-                          </span>
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-3.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Emma Satoshi</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description">2A35</span>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td class="table__cell schedule__status is-active">
-                      <span class="schedule__status-text">Live</span>
-                      <svg class="icon icon-live-camera schedule__status-icon">
-                        <use xlink:href="img/sprite.svg#icon-live-camera"></use>
-                      </svg>
-                    </td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__cell schedule__date">03:00 PM to 04:00 PM</td>
-                    <td class="table__cell schedule__content">Vestibulum vel eros vel metus lacinia feugiat a nec metus. </td>
-                    <td class="table__cell schedule__speakers">
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-4.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Sasha Jackson</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description">2F18</span>
-                          </span>
+                      </td>
+                      <td class="table__cell schedule__status is-active">
+                        <span class="schedule__status-text">Live</span>
+                        <svg class="icon icon-live-camera schedule__status-icon">
+                          <use xlink:href="img/sprite.svg#icon-live-camera"></use>
+                        </svg>
+                      </td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__cell schedule__date">03:00 PM to 04:00 PM</td>
+                      <td class="table__cell schedule__content">Vestibulum vel eros vel metus lacinia feugiat a nec metus. </td>
+                      <td class="table__cell schedule__speakers">
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-4.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Sasha Jackson</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description">2F18</span>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-5.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Diana Brock</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description">2F24</span>
-                          </span>
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-5.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Diana Brock</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description">2F24</span>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td class="table__cell schedule__status">
-                      <span class="schedule__status-text">Preview</span>
-                      <svg class="icon icon-play schedule__status-icon">
-                        <use xlink:href="img/sprite.svg#icon-play"></use>
-                      </svg>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="schedule__body ">
-              <table class="table">
-                <thead class="table__head">
-                  <tr class="table__row">
-                    <th class="table__title title title--medium">Time</th>
-                    <th class="table__title title title--medium">Content</th>
-                    <th class="table__title title title--medium">Speakers</th>
-                    <th class="table__title title title--medium"></th>
-                  </tr>
-                </thead>
-                <tbody class="table__body">
-                  <tr class="table__row">
-                    <td class="table__cell schedule__date">11:00 AM to 12:00 PM</td>
-                    <td class="table__cell schedule__content">Vestibulum vel eros vel metus lacinia feugiat a nec metus. </td>
-                    <td class="table__cell schedule__speakers">
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-1.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Yui Ronald</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description"> 2F12</span>
-                          </span>
+                        <div class="user speaker">
+                          <img class="user__avatar speaker__photo" src="img/users/Avatar-5.jpg" alt="user photo">
+                          <div class="user__body">
+                            <h3 class="user__name title title--xsmall">Diana Brock</h3>
+                            <span class="user__description"> Booth: <span class="user__sub-description">2F24</span>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td class="table__cell schedule__status">
-                      <span class="schedule__status-text">Upcoming</span>
-                      <svg class="icon icon-clock schedule__status-icon">
-                        <use xlink:href="img/sprite.svg#icon-clock"></use>
-                      </svg>
-                    </td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__cell schedule__date">12:00 PM to 03:00 PM</td>
-                    <td class="table__cell schedule__content">Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae, fringilla id magna. Vestibulum ornare eget urna nec pulvinar. Praesent porttitor convallis blandit. Fusce vel egestas dolor. Donec eu augue enim. Donec rutrum non lacus ac rhoncus. Morbi quis luctus leo, nec cursus ex.</td>
-                    <td class="table__cell schedule__speakers">
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-1.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Yui Ronald</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description">2F12</span>
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table__cell schedule__status is-active">
-                      <span class="schedule__status-text">Live</span>
-                      <svg class="icon icon-live-camera schedule__status-icon">
-                        <use xlink:href="img/sprite.svg#icon-live-camera"></use>
-                      </svg>
-                    </td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__cell schedule__date">03:00 PM to 04:00 PM</td>
-                    <td class="table__cell schedule__content">Vestibulum vel eros vel metus lacinia feugiat a nec metus. </td>
-                    <td class="table__cell schedule__speakers">
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-4.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Sasha Jackson</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description">2F18</span>
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table__cell schedule__status">
-                      <span class="schedule__status-text">Preview</span>
-                      <svg class="icon icon-play schedule__status-icon">
-                        <use xlink:href="img/sprite.svg#icon-play"></use>
-                      </svg>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="schedule__body ">
-              <table class="table">
-                <thead class="table__head">
-                  <tr class="table__row">
-                    <th class="table__title title title--medium">Time</th>
-                    <th class="table__title title title--medium">Content</th>
-                    <th class="table__title title title--medium">Speakers</th>
-                    <th class="table__title title title--medium"></th>
-                  </tr>
-                </thead>
-                <tbody class="table__body">
-                  <tr class="table__row">
-                    <td class="table__cell schedule__date">11:00 AM to 12:00 PM</td>
-                    <td class="table__cell schedule__content">Vestibulum vel eros vel metus lacinia feugiat a nec metus. </td>
-                    <td class="table__cell schedule__speakers">
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-1.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Yui Ronald</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description"> 2F12</span>
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table__cell schedule__status">
-                      <span class="schedule__status-text">Upcoming</span>
-                      <svg class="icon icon-clock schedule__status-icon">
-                        <use xlink:href="img/sprite.svg#icon-clock"></use>
-                      </svg>
-                    </td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__cell schedule__date">12:00 PM to 03:00 PM</td>
-                    <td class="table__cell schedule__content">Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae, fringilla id magna. Vestibulum ornare eget urna nec pulvinar. Praesent porttitor convallis blandit. Fusce vel egestas dolor. Donec eu augue enim. Donec rutrum non lacus ac rhoncus. Morbi quis luctus leo, nec cursus ex.</td>
-                    <td class="table__cell schedule__speakers">
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-2.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Johnny Doe</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description">3G12</span>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-1.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Yui Ronald</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description">2F12</span>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-3.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Emma Satoshi</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description">2A35</span>
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table__cell schedule__status is-active">
-                      <span class="schedule__status-text">Live</span>
-                      <svg class="icon icon-live-camera schedule__status-icon">
-                        <use xlink:href="img/sprite.svg#icon-live-camera"></use>
-                      </svg>
-                    </td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__cell schedule__date">03:00 PM to 04:00 PM</td>
-                    <td class="table__cell schedule__content">Vestibulum vel eros vel metus lacinia feugiat a nec metus. </td>
-                    <td class="table__cell schedule__speakers">
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-4.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Sasha Jackson</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description">2F18</span>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-5.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Diana Brock</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description">2F24</span>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="user speaker">
-                        <img class="user__avatar speaker__photo" src="img/users/Avatar-5.jpg" alt="user photo">
-                        <div class="user__body">
-                          <h3 class="user__name title title--xsmall">Diana Brock</h3>
-                          <span href="Booth:" class="user__description"> Booth: <span class="user__sub-description">2F24</span>
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table__cell schedule__status">
-                      <span class="schedule__status-text">Preview</span>
-                      <svg class="icon icon-play schedule__status-icon">
-                        <use xlink:href="img/sprite.svg#icon-play"></use>
-                      </svg>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                      </td>
+                      <td class="table__cell schedule__status">
+                        <span class="schedule__status-text">Preview</span>
+                        <svg class="icon icon-play schedule__status-icon">
+                          <use xlink:href="img/sprite.svg#icon-play"></use>
+                        </svg>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- END table -->
+              </div>
+              <!-- END schedule body -->
+            </section>
+            <!-- END schedule -->
+            <img class="confetti confetti--9 " src="img/confetti/Confetti-9.svg" alt="confetti" />
+            <img class="confetti confetti--10 " src="img/confetti/Confetti-10.svg" alt="confetti" />
+            <img class="confetti confetti--11 " src="img/confetti/Confetti-11.svg" alt="confetti" />
+            <img class="confetti confetti--12 " src="img/confetti/Confetti-12.svg" alt="confetti" />
           </div>
         </div>
       </section>
-      <!-- END section-schedule -->
+      <!-- END schedule -->
       <!-- BEGIN price -->
       <section class="section price">
-        <div class="price__inner container">
-          <h3 class="section__title title title--large price__ttl">Choose a Tier that’s right for you</h3>
-          <div class="price__content">
-            <!-- BEGIN card -->
-            <div class="price-card ">
-              <h3 class="price-card__title title title--medium ">Basic</h3>
-              <strong class="price-card__price ">$100</strong>
-              <ul class="price-card__list ">
-                <li class="price-card__item ">1 Seat Available</li>
-                <li class="price-card__item is-disabled">Access to Wifi Router</li>
-                <li class="price-card__item is-disabled">Free Food &amp; Coffee</li>
-              </ul>
-              <button class="button button_default"> Get Tickets </button>
+        <div class="wrapper">
+          <div class="price__inner container">
+            <h3 class="section__title price__title title title--large __ttl">Choose a Tier that’s right for you</h3>
+            <div class="price__content">
+              <!-- BEGIN card -->
+              <div class="price-card ">
+                <h3 class="price-card__title title title--medium ">Basic</h3>
+                <strong class="price-card__price ">$100</strong>
+                <ul class="price-card__list ">
+                  <li class="price-card__item ">1 Seat Available</li>
+                  <li class="price-card__item is-disabled">Access to Wifi Router</li>
+                  <li class="price-card__item is-disabled">Free Food &amp; Coffee</li>
+                </ul>
+                <button class="button button_default"> Get Tickets </button>
+              </div>
+              <!-- END card -->
+              <!-- BEGIN card -->
+              <div class="price-card price-card_blue">
+                <h3 class="price-card__title title title--medium ">Standard</h3>
+                <strong class="price-card__price ">$150</strong>
+                <ul class="price-card__list ">
+                  <li class="price-card__item ">1 Seat Available</li>
+                  <li class="price-card__item ">Access to Wifi Router</li>
+                  <li class="price-card__item is-disabled">Free Food &amp; Coffee</li>
+                </ul>
+                <button class="button button_blue"> Get Tickets </button>
+              </div>
+              <!-- END card -->
+              <!-- BEGIN card -->
+              <div class="price-card price-card_red">
+                <h3 class="price-card__title title title--medium ">Premium</h3>
+                <strong class="price-card__price ">$200</strong>
+                <ul class="price-card__list ">
+                  <li class="price-card__item ">1 Seat Available</li>
+                  <li class="price-card__item ">Access to Wifi Router</li>
+                  <li class="price-card__item ">Free Food &amp; Coffee</li>
+                </ul>
+                <button class="button button_default"> Get Tickets </button>
+              </div>
+              <!-- END card -->
             </div>
-            <!-- END card -->
-            <!-- BEGIN card -->
-            <div class="price-card price-card_blue">
-              <h3 class="price-card__title title title--medium ">Standard</h3>
-              <strong class="price-card__price ">$150</strong>
-              <ul class="price-card__list ">
-                <li class="price-card__item ">1 Seat Available</li>
-                <li class="price-card__item ">Access to Wifi Router</li>
-                <li class="price-card__item is-disabled">Free Food &amp; Coffee</li>
-              </ul>
-              <button class="button button_blue"> Get Tickets </button>
-            </div>
-            <!-- END card -->
-            <!-- BEGIN card -->
-            <div class="price-card price-card_red">
-              <h3 class="price-card__title title title--medium ">Premium</h3>
-              <strong class="price-card__price ">$200</strong>
-              <ul class="price-card__list ">
-                <li class="price-card__item ">1 Seat Available</li>
-                <li class="price-card__item ">Access to Wifi Router</li>
-                <li class="price-card__item ">Free Food &amp; Coffee</li>
-              </ul>
-              <button class="button button_default"> Get Tickets </button>
-            </div>
-            <!-- END card -->
           </div>
+          <img class="confetti confetti--15 " src="img/confetti/Confetti-15.svg" alt="confetti" />
+          <img class="confetti confetti--16 " src="img/confetti/Confetti-16.svg" alt="confetti" />
         </div>
       </section>
       <!-- END price -->
-      <!-- BEGIN section sponsors -->
-      <section class="section sponsors" id=sponsors>
-        <div class="sponsors__inner container">
-          <h2 class="sponsors__title section__title title title--large">Our Sponsors</h2>
-          <div class="sponsors-block ">
-            <img class="sponsors-block__img" src="img/sponsors/google.png" alt="google">
-            <img class="sponsors-block__img" src="img/sponsors/microsoft.png" alt="microsoft">
-            <img class="sponsors-block__img" src="img/sponsors/airbnb.png" alt="airbnb">
-            <img class="sponsors-block__img" src="img/sponsors/axure.png" alt="axure">
-            <img class="sponsors-block__img" src="img/sponsors/apple.png" alt="apple">
-            <img class="sponsors-block__img" src="img/sponsors/facebook.png" alt="facebook">
-            <img class="sponsors-block__img" src="img/sponsors/nokia.png" alt="nokia">
-            <img class="sponsors-block__img" src="img/sponsors/oracle.png" alt="oracle">
+      <div class="wrapper">
+        <!-- BEGIN section sponsors -->
+        <section class="section sponsors" id=sponsors>
+          <div class="sponsors__inner container">
+            <h2 class="sponsors__title section__title title title--large">Our Sponsors</h2>
+            <div class="sponsors-block ">
+              <img class="sponsors-block__img" src="img/sponsors/google.png" alt="google">
+              <img class="sponsors-block__img" src="img/sponsors/microsoft.png" alt="microsoft">
+              <img class="sponsors-block__img" src="img/sponsors/airbnb.png" alt="airbnb">
+              <img class="sponsors-block__img" src="img/sponsors/axure.png" alt="axure">
+              <img class="sponsors-block__img" src="img/sponsors/apple.png" alt="apple">
+              <img class="sponsors-block__img" src="img/sponsors/facebook.png" alt="facebook">
+              <img class="sponsors-block__img" src="img/sponsors/nokia.png" alt="nokia">
+              <img class="sponsors-block__img" src="img/sponsors/oracle.png" alt="oracle">
+            </div>
           </div>
-        </div>
-        <div class="container">
-          <button class="button button_blue sponsors__button"> Become a Sponsor </button>
-        </div>
-      </section>
-      <!-- END section sponsors -->
+          <div class="container">
+            <button class="button button_blue sponsors__button"> Become a Sponsor </button>
+          </div>
+        </section>
+        <!-- END section sponsors -->
+        <img class="confetti confetti--13 " src="img/confetti/Confetti-13.svg" alt="confetti" />
+        <img class="confetti confetti--14 " src="img/confetti/Confetti-14.svg" alt="confetti" />
+      </div>
       <section class="section testimonials wrapper">
         <div class="container">
           <h2 class="section__title testimonials__title title title--large">Testimonials</h2>
@@ -595,7 +643,7 @@
             <div class="comment swiper-slide comments-slider__slide">
               <blockquote class="comment__text "> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </blockquote>
               <div class="user comment__user">
-                <img class="user__avatar comment__photo" src="img/users/Avatar-1.jpg" alt="user photo">
+                <img class="user__avatar comment__photo" src="img/users/Avatar-6.jpg" alt="user photo">
                 <div class="user__body">
                   <h3 class="user__name title title--small">Johnny Doe</h3>
                   <a href="ipsum.com" class="user__about"> ipsum.com </a>
@@ -605,7 +653,17 @@
             <div class="comment swiper-slide comments-slider__slide">
               <blockquote class="comment__text "> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </blockquote>
               <div class="user comment__user">
-                <img class="user__avatar comment__photo" src="img/users/Avatar-1.jpg" alt="user photo">
+                <img class="user__avatar comment__photo" src="img/users/Avatar-7.jpg" alt="user photo">
+                <div class="user__body">
+                  <h3 class="user__name title title--small">Johnny Doe</h3>
+                  <a href="ipsum.com" class="user__about"> ipsum.com </a>
+                </div>
+              </div>
+            </div>
+            <div class="comment swiper-slide comments-slider__slide">
+              <blockquote class="comment__text "> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </blockquote>
+              <div class="user comment__user">
+                <img class="user__avatar comment__photo" src="img/users/Avatar-8.jpg" alt="user photo">
                 <div class="user__body">
                   <h3 class="user__name title title--small">Johnny Doe</h3>
                   <a href="ipsum.com" class="user__about"> ipsum.com </a>
@@ -826,13 +884,13 @@
         </div>
       </section>
       <!-- END section category-->
-      <div class="contacts-block">
+      <div class="contacts-block" id="contact">
         <!-- BEGIN section contacts -->
         <section class="section contacts contact">
           <div class="contact__inner">
             <div class="contacts__header">
               <h2 class="contacts__title title title--large">Contact us</h2>
-              <p class="contacts__text">Have an inquiry? We’ll be happy to assist you</p>
+              <h3 class="contacts__sub-title title title--medium title--thin">Have an inquiry? We’ll be happy to assist you</h3>
             </div>
             <div class="contacts__body">
               <address class="contacts__address address">
@@ -854,19 +912,19 @@
         </section>
         <!-- END section contacts -->
         <!-- BEGIN section contacts -->
-        <section class="section contacts contacts--form">
+        <section class="section contacts contact-us">
           <div class="contacts__inner">
             <h3 class="contacts__title   title">Fill in your details</h3>
             <form action="handler" method="post" class="form" id="contact-form">
-              <div class="form__item">
+              <div class="form__item js-form-item" data-text="">
                 <label class="form__label" for="name">name</label>
-                <input class="input form__input js-form-field" type="text" id="name" name="name" placeholder="name" required="true">
+                <input class="input form__input js-form-field" type="text" id="name" name="name" placeholder="name" required>
               </div>
-              <div class="form__item">
+              <div class="form__item js-form-item" data-text="">
                 <label class="form__label" for="email">email</label>
-                <input class="input form__input js-form-field" type="email" id="email" name="email" placeholder="email" required="true">
+                <input class="input form__input js-form-field" type="email" id="email" name="email" placeholder="email" required>
               </div>
-              <div class="form__item">
+              <div class="form__item js-form-item" data-text="">
                 <label class="form__label" for="message">message</label>
                 <textarea class="form__message js-form-field" name="message" id="message" placeholder="message"></textarea>
               </div>
@@ -944,7 +1002,7 @@
     </footer>
     <!-- END footer -->
     <!-- BEGIN scripts -->
-    <script type="text/javascript" src="js/app.js"></script>
+    <script src="js/app.js"></script>
     <!-- END scripts -->
   </body>
 </html>
